@@ -1,0 +1,500 @@
+name: Data Analysis Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'data/**'
+      - '*.csv'
+      - '*.json'
+      - '*.xlsx'
+      - '*.parquet'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'data/**'
+      - '*.csv'
+      - '*.json'
+      - '*.xlsx'
+      - '*.parquet'
+  workflow_dispatch:
+    inputs:
+      data_file:
+        description: 'Path to data file to analyze'
+        required: false
+        default: ''
+      full_analysis:
+        description: 'Run full analysis pipeline'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  PYTHON_VERSION: '3.9'
+  DATA_DIRECTORY: './data'
+  OUTPUT_DIRECTORY: './output'
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
+      has_data_changes: ${{ steps.check-changes.outputs.has_data_changes }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+        with:
+          files: |
+            data/**
+            **/*.csv
+            **/*.json
+            **/*.xlsx
+            **/*.parquet
+
+      - name: Check for data file changes
+        id: check-changes
+        run: |
+          if [ "${{ steps.changed-files.outputs.any_changed }}" == "true" ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "has_data_changes=true" >> $GITHUB_OUTPUT
+            echo "Data files changed or manual trigger detected"
+          else
+            echo "has_data_changes=false" >> $GITHUB_OUTPUT
+            echo "No data file changes detected"
+          fi
+
+  validate-data:
+    needs: setup
+    if: needs.setup.outputs.has_data_changes == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate data files
+        run: |
+          python -c "
+          import os
+          import pandas as pd
+          import json
+          from pathlib import Path
+          
+          data_dir = Path('${{ env.DATA_DIRECTORY }}')
+          valid_files = []
+          invalid_files = []
+          
+          if data_dir.exists():
+              for file_path in data_dir.rglob('*'):
+                  if file_path.is_file() and file_path.suffix.lower() in ['.csv', '.json', '.xlsx', '.parquet']:
+                      try:
+                          if file_path.suffix.lower() == '.csv':
+                              df = pd.read_csv(file_path)
+                          elif file_path.suffix.lower() == '.json':
+                              df = pd.read_json(file_path)
+                          elif file_path.suffix.lower() == '.xlsx':
+                              df = pd.read_excel(file_path)
+                          elif file_path.suffix.lower() == '.parquet':
+                              df = pd.read_parquet(file_path)
+                          
+                          if len(df) > 0:
+                              valid_files.append(str(file_path))
+                              print(f'✅ Valid: {file_path} ({len(df)} rows, {len(df.columns)} columns)')
+                          else:
+                              invalid_files.append(str(file_path))
+                              print(f'⚠️  Empty: {file_path}')
+                      except Exception as e:
+                          invalid_files.append(str(file_path))
+                          print(f'❌ Invalid: {file_path} - {str(e)}')
+          
+          print(f'\\nSummary: {len(valid_files)} valid, {len(invalid_files)} invalid files')
+          
+          if invalid_files and len(invalid_files) > len(valid_files):
+              print('❌ Too many invalid files, failing validation')
+              exit(1)
+          else:
+              print('✅ Data validation passed')
+              
+              # Save valid files list for next job
+              with open('valid_files.json', 'w') as f:
+                  json.dump(valid_files, f)
+          "
+
+      - name: Upload valid files list
+        uses: actions/upload-artifact@v3
+        with:
+          name: valid-files
+          path: valid_files.json
+
+  analyze-data:
+    needs: [setup, validate-data]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9']
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download valid files list
+        uses: actions/download-artifact@v3
+        with:
+          name: valid-files
+
+      - name: Setup directories
+        run: |
+          mkdir -p ${{ env.OUTPUT_DIRECTORY }}/reports
+          mkdir -p ${{ env.OUTPUT_DIRECTORY }}/visualizations
+          mkdir -p logs
+
+      - name: Configure environment
+        run: |
+          echo "AMPLIFY_API_KEY=${{ secrets.AMPLIFY_API_KEY }}" >> .env
+          echo "DATA_DIRECTORY=${{ env.DATA_DIRECTORY }}" >> .env
+          echo "OUTPUT_DIRECTORY=${{ env.OUTPUT_DIRECTORY }}" >> .env
+          echo "LOG_LEVEL=INFO" >> .env
+          echo "CONFIDENCE_LEVEL=0.95" >> .env
+          echo "MAX_FILE_SIZE_MB=100" >> .env
+
+      - name: Run analysis on changed files
+        if: github.event_name != 'workflow_dispatch'
+        run: |
+          python -c "
+          import json
+          import asyncio
+          import sys
+          from pathlib import Path
+          
+          # Import our modules
+          sys.path.append('.')
+          from main import run_analysis_once
+          
+          # Load valid files
+          try:
+              with open('valid_files.json', 'r') as f:
+                  valid_files = json.load(f)
+          except:
+              valid_files = []
+          
+          # Get changed files from environment
+          changed_files = '''${{ needs.setup.outputs.changed_files }}'''.split()
+          
+          # Find intersection of changed and valid files
+          files_to_analyze = [f for f in changed_files if f in valid_files]
+          
+          print(f'Files to analyze: {files_to_analyze}')
+          
+          async def run_analyses():
+              for file_path in files_to_analyze[:5]:  # Limit to 5 files per run
+                  print(f'\\n🔍 Analyzing: {file_path}')
+                  try:
+                      await run_analysis_once(file_path)
+                      print(f'✅ Analysis completed: {file_path}')
+                  except Exception as e:
+                      print(f'❌ Analysis failed: {file_path} - {str(e)}')
+          
+          if files_to_analyze:
+              asyncio.run(run_analyses())
+          else:
+              print('No valid data files to analyze')
+          "
+
+      - name: Run analysis on specific file
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.data_file != ''
+        run: |
+          echo "Running analysis on specific file: ${{ github.event.inputs.data_file }}"
+          python main.py --analyze "${{ github.event.inputs.data_file }}"
+
+      - name: Run full analysis
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.full_analysis == 'true'
+        run: |
+          echo "Running full analysis on all valid files"
+          python -c "
+          import json
+          import asyncio
+          import sys
+          from pathlib import Path
+          
+          # Import our modules
+          sys.path.append('.')
+          from main import run_analysis_once
+          
+          # Load valid files
+          try:
+              with open('valid_files.json', 'r') as f:
+                  valid_files = json.load(f)
+          except:
+              valid_files = []
+          
+          async def run_all_analyses():
+              for file_path in valid_files:
+                  print(f'\\n🔍 Analyzing: {file_path}')
+                  try:
+                      await run_analysis_once(file_path)
+                      print(f'✅ Analysis completed: {file_path}')
+                  except Exception as e:
+                      print(f'❌ Analysis failed: {file_path} - {str(e)}')
+          
+          if valid_files:
+              asyncio.run(run_all_analyses())
+          else:
+              print('No valid data files found for analysis')
+          "
+
+      - name: Upload analysis results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: analysis-results-${{ matrix.python-version }}
+          path: |
+            ${{ env.OUTPUT_DIRECTORY }}/
+            logs/
+          retention-days: 30
+
+      - name: Generate analysis summary
+        if: always()
+        run: |
+          echo "# Data Analysis Summary" > analysis_summary.md
+          echo "" >> analysis_summary.md
+          echo "**Date**: $(date)" >> analysis_summary.md
+          echo "**Commit**: ${{ github.sha }}" >> analysis_summary.md
+          echo "**Branch**: ${{ github.ref_name }}" >> analysis_summary.md
+          echo "" >> analysis_summary.md
+          
+          if [ -d "${{ env.OUTPUT_DIRECTORY }}/reports" ]; then
+            echo "## Generated Reports" >> analysis_summary.md
+            find ${{ env.OUTPUT_DIRECTORY }}/reports -name "*.html" -o -name "*.json" | head -10 | while read file; do
+              echo "- \`$(basename "$file")\`" >> analysis_summary.md
+            done
+            echo "" >> analysis_summary.md
+          fi
+          
+          if [ -d "${{ env.OUTPUT_DIRECTORY }}/visualizations" ]; then
+            echo "## Generated Visualizations" >> analysis_summary.md
+            find ${{ env.OUTPUT_DIRECTORY }}/visualizations -name "*.png" -o -name "*.jpg" | head -10 | while read file; do
+              echo "- \`$(basename "$file")\`" >> analysis_summary.md
+            done
+            echo "" >> analysis_summary.md
+          fi
+          
+          if [ -f "logs/pipeline.log" ]; then
+            echo "## Pipeline Logs (last 20 lines)" >> analysis_summary.md
+            echo "\`\`\`" >> analysis_summary.md
+            tail -20 logs/pipeline.log >> analysis_summary.md
+            echo "\`\`\`" >> analysis_summary.md
+          fi
+
+      - name: Upload analysis summary
+        uses: actions/upload-artifact@v3
+        with:
+          name: analysis-summary
+          path: analysis_summary.md
+
+  quality-check:
+    needs: [analyze-data]
+    runs-on: ubuntu-latest
+    if: always() && needs.analyze-data.result != 'skipped'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download analysis results
+        uses: actions/download-artifact@v3
+        with:
+          name: analysis-results-3.9
+          path: analysis-results
+
+      - name: Quality assessment
+        run: |
+          echo "# Quality Assessment Report" > quality_report.md
+          echo "" >> quality_report.md
+          
+          # Count generated files
+          report_count=$(find analysis-results -name "*.html" 2>/dev/null | wc -l)
+          json_count=$(find analysis-results -name "*.json" 2>/dev/null | wc -l)
+          viz_count=$(find analysis-results -name "*.png" -o -name "*.jpg" 2>/dev/null | wc -l)
+          
+          echo "## File Generation Summary" >> quality_report.md
+          echo "- HTML Reports: $report_count" >> quality_report.md
+          echo "- JSON Reports: $json_count" >> quality_report.md  
+          echo "- Visualizations: $viz_count" >> quality_report.md
+          echo "" >> quality_report.md
+          
+          # Check for errors in logs
+          if [ -f "analysis-results/logs/pipeline.log" ]; then
+            error_count=$(grep -c "ERROR" analysis-results/logs/pipeline.log || true)
+            warning_count=$(grep -c "WARNING" analysis-results/logs/pipeline.log || true)
+            
+            echo "## Log Analysis" >> quality_report.md
+            echo "- Errors: $error_count" >> quality_report.md
+            echo "- Warnings: $warning_count" >> quality_report.md
+            echo "" >> quality_report.md
+            
+            if [ $error_count -gt 0 ]; then
+              echo "## Recent Errors" >> quality_report.md
+              echo "\`\`\`" >> quality_report.md
+              grep "ERROR" analysis-results/logs/pipeline.log | tail -5 >> quality_report.md
+              echo "\`\`\`" >> quality_report.md
+            fi
+          fi
+          
+          # Overall assessment
+          echo "## Overall Assessment" >> quality_report.md
+          if [ $report_count -gt 0 ] && [ $viz_count -gt 0 ]; then
+            echo "✅ **PASS** - Analysis pipeline generated reports and visualizations successfully" >> quality_report.md
+          elif [ $report_count -gt 0 ]; then
+            echo "⚠️ **PARTIAL** - Reports generated but visualizations missing" >> quality_report.md
+          else
+            echo "❌ **FAIL** - No analysis outputs generated" >> quality_report.md
+          fi
+
+      - name: Upload quality report
+        uses: actions/upload-artifact@v3
+        with:
+          name: quality-report
+          path: quality_report.md
+
+  deploy-results:
+    needs: [analyze-data, quality-check]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download analysis results
+        uses: actions/download-artifact@v3
+        with:
+          name: analysis-results-3.9
+          path: analysis-results
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        if: github.repository_permissions.pages == 'write'
+
+      - name: Prepare GitHub Pages content
+        run: |
+          mkdir -p pages
+          
+          # Create index.html for GitHub Pages
+          cat > pages/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Data Analysis Results</title>
+              <style>
+                  body { font-family: Arial, sans-serif; margin: 40px; }
+                  .container { max-width: 1200px; margin: 0 auto; }
+                  .section { margin: 30px 0; }
+                  .file-list { list-style-type: none; padding: 0; }
+                  .file-list li { margin: 10px 0; padding: 10px; background: #f5f5f5; border-radius: 5px; }
+                  .file-list a { text-decoration: none; color: #333; }
+                  .file-list a:hover { color: #0066cc; }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>Data Analysis Pipeline Results</h1>
+                  <p><strong>Last Updated:</strong> $(date)</p>
+                  
+                  <div class="section">
+                      <h2>Generated Reports</h2>
+                      <ul class="file-list">
+          EOF
+          
+          # Add HTML reports to index
+          find analysis-results -name "*.html" | while read file; do
+            rel_path=$(echo "$file" | sed 's|analysis-results/||')
+            filename=$(basename "$file")
+            echo "                        <li><a href=\"$rel_path\">$filename</a></li>" >> pages/index.html
+          done
+          
+          cat >> pages/index.html << 'EOF'
+                      </ul>
+                  </div>
+                  
+                  <div class="section">
+                      <h2>Visualizations</h2>
+                      <ul class="file-list">
+          EOF
+          
+          # Add visualizations to index
+          find analysis-results -name "*.png" -o -name "*.jpg" | while read file; do
+            rel_path=$(echo "$file" | sed 's|analysis-results/||')
+            filename=$(basename "$file")
+            echo "                        <li><a href=\"$rel_path\">$filename</a></li>" >> pages/index.html
+          done
+          
+          cat >> pages/index.html << 'EOF'
+                      </ul>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+          
+          # Copy all analysis results to pages directory
+          cp -r analysis-results/* pages/ 2>/dev/null || true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: pages
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+        if: github.repository_permissions.pages == 'write'
+
+  notify:
+    needs: [setup, validate-data, analyze-data, quality-check]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Notification summary
+        run: |
+          echo "# Pipeline Execution Summary" 
+          echo ""
+          echo "**Repository**: ${{ github.repository }}"
+          echo "**Branch**: ${{ github.ref_name }}"  
+          echo "**Commit**: ${{ github.sha }}"
+          echo "**Trigger**: ${{ github.event_name }}"
+          echo ""
+          echo "## Job Status"
+          echo "- Setup: ${{ needs.setup.result }}"
+          echo "- Data Validation: ${{ needs.validate-data.result }}"
+          echo "- Data Analysis: ${{ needs.analyze-data.result }}"
+          echo "- Quality Check: ${{ needs.quality-check.result }}"
+          echo ""
+          
+          if [ "${{ needs.analyze-data.result }}" == "success" ]; then
+            echo "✅ Analysis pipeline completed successfully"
+          else
+            echo "❌ Analysis pipeline encountered issues"
+          fi
