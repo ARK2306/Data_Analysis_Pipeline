@@ -325,6 +325,11 @@ For issues and questions:
 
 ## Changelog
 
+### Version 1.0.1
+- Updated GitHub Actions to latest versions (fixed deprecated actions)
+- Enhanced CI/CD pipeline stability
+- Added comprehensive dataset integration guide
+
 ### Version 1.0.0
 - Initial release with core analysis pipeline
 - Amplify API integration
