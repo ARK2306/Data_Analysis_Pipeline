@@ -464,12 +464,12 @@ jobs:
           cp -r analysis-results/* pages/ 2>/dev/null || true
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: pages
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
         if: github.repository_permissions.pages == 'write'
 
   notify:
