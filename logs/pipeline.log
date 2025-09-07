@@ -13,3 +13,29 @@
 2025-09-07 16:03:37,101 - report_generator - ERROR - Report generation failed: No filter named 'number_format'.
 2025-09-07 16:03:37,101 - __main__ - INFO - Analysis pipeline completed for sales_data/retail_sales_dataset.csv
 2025-09-07 16:03:37,101 - __main__ - INFO - One-time analysis completed
+2025-09-07 18:45:03,429 - __main__ - INFO - Running one-time analysis on: sales_data/customer_feedback.csv
+2025-09-07 18:45:03,429 - __main__ - INFO - Initializing Data Analysis Pipeline...
+2025-09-07 18:45:03,429 - root - ERROR - Configuration validation failed: AMPLIFY_API_KEY environment variable not set
+2025-09-07 18:45:03,429 - __main__ - ERROR - Configuration validation failed
+2025-09-07 18:45:03,429 - __main__ - ERROR - Failed to initialize pipeline
+2025-09-07 18:47:09,871 - __main__ - INFO - Running one-time analysis on: sales_data/customer_feedback.csv
+2025-09-07 18:47:09,871 - __main__ - INFO - Initializing Data Analysis Pipeline...
+2025-09-07 18:47:09,872 - ci_cd_manager - INFO - Connected to Git repository: /Users/aryanreddy/Desktop/swe-assignments/as3_example/aryan_kalluri
+2025-09-07 18:47:09,872 - __main__ - INFO - Pipeline initialization completed successfully
+2025-09-07 18:47:09,872 - __main__ - INFO - Processing data change: sales_data/customer_feedback.csv
+2025-09-07 18:47:09,872 - analysis_engine - INFO - Starting analysis of: sales_data/customer_feedback.csv
+2025-09-07 18:47:09,875 - analysis_engine - INFO - Loaded 20 rows and 6 columns from sales_data/customer_feedback.csv
+2025-09-07 18:47:10,564 - analysis_engine - INFO - Analysis completed for: sales_data/customer_feedback.csv
+2025-09-07 18:47:10,564 - report_generator - INFO - Generating report for analysis of: sales_data/customer_feedback.csv
+2025-09-07 18:47:10,564 - report_generator - INFO - Generating AI insights via Amplify API
+2025-09-07 18:47:10,699 - report_generator - ERROR - Amplify API error: 401 - {"type":"error","error":{"type":"authentication_error","message":"Invalid bearer token"},"request_id":"req_011CSuw48mA2iuoqRZ2QKsXk"}
+2025-09-07 18:47:10,699 - report_generator - INFO - Generating fallback insights (API unavailable)
+2025-09-07 18:47:10,704 - report_generator - INFO - Reports generated successfully:
+2025-09-07 18:47:10,704 - report_generator - INFO - - HTML: analytics_output/reports/customer_feedback_report_20250907_184710.html
+2025-09-07 18:47:10,704 - report_generator - INFO - - JSON: analytics_output/reports/customer_feedback_report_20250907_184710.json
+2025-09-07 18:47:10,704 - report_generator - INFO - - Summary: analytics_output/reports/customer_feedback_summary_20250907_184710.txt
+2025-09-07 18:47:10,704 - ci_cd_manager - INFO - Starting CI/CD pipeline for analysis of: sales_data/customer_feedback.csv
+2025-09-07 18:47:10,750 - ci_cd_manager - INFO - Created and checked out branch: analysis-pipeline-customer_feedback-20250907_184710
+2025-09-07 18:47:10,750 - ci_cd_manager - INFO - Created analysis branch: analysis-pipeline-customer_feedback-20250907_184710
+2025-09-07 18:47:10,751 - ci_cd_manager - INFO - Created pipeline summary: analytics_output/pipeline_summaries/customer_feedback_pipeline_20250907_184710.md
+2025-09-07 18:47:10,862 - ci_cd_manager - INFO - Added files to staging: ['analytics_output/reports/customer_feedback_report_20250907_184710.html', 'analytics_output/visualizations/customer_feedback_correlation_heatmap.png', 'analytics_output/visualizations/customer_feedback_distributions.png', 'analytics_output/visualizations/customer_feedback_boxplots.png', 'analytics_output/pipeline_summaries/customer_feedback_pipeline_20250907_184710.md']
