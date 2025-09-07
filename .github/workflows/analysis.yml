@@ -136,7 +136,7 @@ jobs:
           "
 
       - name: Upload valid files list
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: valid-files
           path: valid_files.json
@@ -164,7 +164,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Download valid files list
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: valid-files
 
@@ -269,7 +269,7 @@ jobs:
           "
 
       - name: Upload analysis results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: analysis-results-${{ matrix.python-version }}
@@ -312,7 +312,7 @@ jobs:
           fi
 
       - name: Upload analysis summary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: analysis-summary
           path: analysis_summary.md
@@ -326,7 +326,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download analysis results
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: analysis-results-3.9
           path: analysis-results
@@ -376,7 +376,7 @@ jobs:
           fi
 
       - name: Upload quality report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quality-report
           path: quality_report.md
@@ -390,7 +390,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download analysis results
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: analysis-results-3.9
           path: analysis-results
