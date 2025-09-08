@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report - retail_data</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .section h3 { color: #555; margin-top: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { color: #666; font-size: 14px; }
+        .quality-score { font-size: 36px; font-weight: bold; }
+        .score-excellent { color: #28a745; }
+        .score-good { color: #17a2b8; }
+        .score-fair { color: #ffc107; }
+        .score-poor { color: #dc3545; }
+        .findings-list { list-style-type: none; padding: 0; }
+        .findings-list li { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #2196f3; }
+        .recommendations-list { list-style-type: none; padding: 0; }
+        .recommendations-list li { background: #fff3e0; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #ff9800; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .data-table th { background-color: #f2f2f2; }
+        .ai-insights { background: #f8f9fa; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .timestamp { color: #666; font-size: 12px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Analysis Report</h1>
+            <h2>retail_data</h2>
+            <p class="timestamp">Generated on 2025-09-07 22:11:17</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">302,010</div>
+                    <div class="metric-label">Total Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">30</div>
+                    <div class="metric-label">Total Columns</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">76.6 MB</div>
+                    <div class="metric-label">File Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value quality-score score-excellent">99.9%</div>
+                    <div class="metric-label">Data Quality Score</div>
+                </div>
+            </div>
+
+            
+            <h3>Key Findings</h3>
+            <ul class="findings-list">
+                
+                <li>Found 2 strong correlations between variables</li>
+                
+                <li>Outliers detected in 2 columns</li>
+                
+            </ul>
+            
+
+            
+            <h3>Recommendations</h3>
+            <ul class="recommendations-list">
+                
+                <li>Explore strong correlations for potential feature engineering</li>
+                
+            </ul>
+            
+        </div>
+
+        
+        <div class="section">
+            <h2>AI-Powered Insights</h2>
+            <div class="ai-insights">
+                <pre>### 1. Key Findings and Insights
+
+- **Strong Correlations**: There are strong correlations between `Total_Purchases` and `Total_Amount` (0.649) and between `Amount` and `Total_Amount` (0.671). This suggests that as the number of purchases increases, the total amount spent also increases, and that the individual transaction amount has a significant impact on overall sales.
+
+- **Transaction and Customer IDs**: Both `Transaction_ID` and `Customer_ID` are platykurtic, indicating a flatter distribution with fewer extreme values. This suggests a relatively uniform distribution of transactions across customers without significant outliers.
+
+### 2. Data Quality Assessment and Recommendations
+
+- **Missing Values**: At 0.1%, missing values are negligible. However, it’s important to consistently monitor this in future data entries to ensure this remains low.
+
+- **Duplicate Rows**: With 0.0% duplicates, data integrity is high. Continuous checks should be performed, especially after data merges or uploads.
+
+- **Outliers**: The absence of outliers in key identifiers like `Transaction_ID`, `Customer_ID`, and `Phone` indicates a well-structured dataset. Regular outlier analysis should still be conducted, especially for monetary values.
+
+**Recommendations**:
+- Implement regular data audits to ensure ongoing data quality.
+- Utilize automated scripts to detect anomalies in the dataset as new data is collected.
+
+### 3. Business Implications of the Statistical Findings
+
+- **Sales Strategies**: The strong correlation between `Total_Purchases` and `Total_Amount` implies that increasing the number of transactions can significantly enhance revenue. Strategies such as promotions or loyalty programs that incentivize repeat purchases could be effective.
+
+- **Customer Insights**: Understanding the relationship between transaction amounts and total sales can guide marketing efforts. For instance, targeting high-spending customers with personalized offers could increase total sales volume.
+
+- **Inventory Management**: Insights from the data can help in managing inventory better, as understanding purchasing patterns can facilitate more accurate forecasting and stock management.
+
+### 4. Recommendations for Further Analysis or Data Collection
+
+- **Customer Segmentation**: Further analysis could involve segmenting customers based on `Total_Purchases`, `Total_Amount`, and demographic characteristics to tailor marketing strategies more effectively.
+
+- **Time Series Analysis**: Analyzing the transaction data over time (e.g., daily, weekly, monthly trends) could provide insights into seasonality effects and peak purchasing periods.
+
+- **Product Analytics**: If product-level data is available, analyzing which products drive higher total amounts or purchases could inform inventory and marketing strategies.
+
+### 5. Any Potential Issues or Concerns Identified
+
+- **Data Representation**: The flat distribution of IDs suggests a lack of diversity in customer engagement. If most transactions are concentrated among a few customers, this could pose a risk to long-term business sustainability.
+
+- **Non-normal Distributions**: The platykurtic nature of key identifiers might indicate that the dataset could benefit from transformations or different analytical approaches to account for the flatness.
+
+- **Lack of Contextual Data**: The absence of additional contextual data (like transaction dates, product categories, etc.) limits the depth of insights that can be derived. Consider collecting more granular data on transactions and customer interactions.
+
+Overall, while the dataset is of high quality with actionable insights, attention should be paid to diversifying the customer base and enriching the dataset for deeper analysis.</pre>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2>Data Quality Assessment</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">0.1%</div>
+                    <div class="metric-label">Missing Values</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4</div>
+                    <div class="metric-label">Duplicate Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">293911</div>
+                    <div class="metric-label">Complete Rows</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h2>Strong Correlations</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable 1</th>
+                        <th>Variable 2</th>
+                        <th>Pearson Correlation</th>
+                        <th>Strength</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Total_Purchases</td>
+                        <td>Total_Amount</td>
+                        <td>0.649</td>
+                        <td>Moderate</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Amount</td>
+                        <td>Total_Amount</td>
+                        <td>0.671</td>
+                        <td>Moderate</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        <div class="section">
+            <h2>Analysis Metadata</h2>
+            <table class="data-table">
+                <tr><td><strong>Analysis Timestamp</strong></td><td>2025-09-07T22:11:17.643172</td></tr>
+                <tr><td><strong>File Path</strong></td><td>sales_data/retail_data.csv</td></tr>
+                <tr><td><strong>Report Version</strong></td><td>1.0</td></tr>
+                
+                <tr><td><strong>AI Model Used</strong></td><td>gpt-4o-mini</td></tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>

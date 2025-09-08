@@ -1,0 +1,29 @@
+
+DATA ANALYSIS SUMMARY REPORT
+============================
+File: retail_data
+Generated: 2025-09-07 22:11:17
+
+DATASET OVERVIEW
+----------------
+Rows: 302,010
+Columns: 30
+File Size: 76.6 MB
+Data Quality Score: 99.9%
+
+KEY FINDINGS
+------------
+• Found 2 strong correlations between variables
+• Outliers detected in 2 columns
+
+RECOMMENDATIONS
+---------------
+• Explore strong correlations for potential feature engineering
+
+AI INSIGHTS
+-----------
+### 1. Key Findings and Insights
+
+- **Strong Correlations**: There are strong correlations between `Total_Purchases` and `Total_Amount` (0.649) and between `Amount` and `Total_Amount` (0.671). This suggests that as the number of purchases increases, the total amount spent also increases, and that the individual transaction amount has a significant impact on overall sales.
+
+- **Transaction and Customer IDs**: Both `Transaction_ID` and `Customer_ID` are platykurtic, indicating a flatter distributi...

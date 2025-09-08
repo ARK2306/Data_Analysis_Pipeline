@@ -1,0 +1,2205 @@
+{
+  "metadata": {
+    "file_path": "sales_data/retail_data.csv",
+    "file_name": "retail_data",
+    "analysis_timestamp": "2025-09-07T22:11:17.643172",
+    "report_version": "1.0"
+  },
+  "analysis_results": {
+    "file_info": {
+      "file_name": "retail_data.csv",
+      "file_path": "sales_data/retail_data.csv",
+      "file_size_mb": 76.61448287963867,
+      "rows": 302010,
+      "columns": 30,
+      "column_names": [
+        "Transaction_ID",
+        "Customer_ID",
+        "Name",
+        "Email",
+        "Phone",
+        "Address",
+        "City",
+        "State",
+        "Zipcode",
+        "Country",
+        "Age",
+        "Gender",
+        "Income",
+        "Customer_Segment",
+        "Date",
+        "Year",
+        "Month",
+        "Time",
+        "Total_Purchases",
+        "Amount",
+        "Total_Amount",
+        "Product_Category",
+        "Product_Brand",
+        "Product_Type",
+        "Feedback",
+        "Shipping_Method",
+        "Payment_Method",
+        "Order_Status",
+        "Ratings",
+        "products"
+      ],
+      "data_types": {
+        "Transaction_ID": "float64",
+        "Customer_ID": "float64",
+        "Name": "object",
+        "Email": "object",
+        "Phone": "float64",
+        "Address": "object",
+        "City": "object",
+        "State": "object",
+        "Zipcode": "float64",
+        "Country": "object",
+        "Age": "float64",
+        "Gender": "object",
+        "Income": "object",
+        "Customer_Segment": "object",
+        "Date": "object",
+        "Year": "float64",
+        "Month": "object",
+        "Time": "object",
+        "Total_Purchases": "float64",
+        "Amount": "float64",
+        "Total_Amount": "float64",
+        "Product_Category": "object",
+        "Product_Brand": "object",
+        "Product_Type": "object",
+        "Feedback": "object",
+        "Shipping_Method": "object",
+        "Payment_Method": "object",
+        "Order_Status": "object",
+        "Ratings": "float64",
+        "products": "object"
+      },
+      "memory_usage_mb": 356.6347875595093
+    },
+    "data_quality": {
+      "missing_values": {
+        "by_column": {
+          "Transaction_ID": 333,
+          "Customer_ID": 308,
+          "Name": 382,
+          "Email": 347,
+          "Phone": 362,
+          "Address": 315,
+          "City": 248,
+          "State": 281,
+          "Zipcode": 340,
+          "Country": 271,
+          "Age": 173,
+          "Gender": 317,
+          "Income": 290,
+          "Customer_Segment": 215,
+          "Date": 359,
+          "Year": 350,
+          "Month": 273,
+          "Time": 350,
+          "Total_Purchases": 361,
+          "Amount": 357,
+          "Total_Amount": 350,
+          "Product_Category": 283,
+          "Product_Brand": 281,
+          "Product_Type": 0,
+          "Feedback": 184,
+          "Shipping_Method": 337,
+          "Payment_Method": 297,
+          "Order_Status": 235,
+          "Ratings": 184,
+          "products": 0
+        },
+        "total_missing": "8383",
+        "missing_percentage": 0.09252453009282254
+      },
+      "duplicate_rows": {
+        "count": "4",
+        "percentage": 0.0013244594549849343
+      },
+      "data_completeness": {
+        "complete_rows": 293911,
+        "complete_percentage": 97.31830071851925
+      },
+      "column_quality": {
+        "Transaction_ID": {
+          "type": "float64",
+          "missing_count": "333",
+          "missing_percentage": 0.11026124962749577,
+          "unique_values": 294461,
+          "unique_percentage": 97.50041389357969,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Customer_ID": {
+          "type": "float64",
+          "missing_count": "308",
+          "missing_percentage": 0.10198337803383993,
+          "unique_values": 86766,
+          "unique_percentage": 28.729512267805703,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Name": {
+          "type": "object",
+          "missing_count": "382",
+          "missing_percentage": 0.12648587795106123,
+          "unique_values": 159390,
+          "unique_percentage": 52.77639813251217
+        },
+        "Email": {
+          "type": "object",
+          "missing_count": "347",
+          "missing_percentage": 0.11489685771994304,
+          "unique_values": 52897,
+          "unique_percentage": 17.514982947584517
+        },
+        "Phone": {
+          "type": "float64",
+          "missing_count": "362",
+          "missing_percentage": 0.11986358067613656,
+          "unique_values": 299295,
+          "unique_percentage": 99.10102314492897,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Address": {
+          "type": "object",
+          "missing_count": "315",
+          "missing_percentage": 0.10430118208006357,
+          "unique_values": 299329,
+          "unique_percentage": 99.11228105029635
+        },
+        "City": {
+          "type": "object",
+          "missing_count": "248",
+          "missing_percentage": 0.08211648620906592,
+          "unique_values": 130,
+          "unique_percentage": 0.04304493228701037
+        },
+        "State": {
+          "type": "object",
+          "missing_count": "281",
+          "missing_percentage": 0.09304327671269164,
+          "unique_values": 54,
+          "unique_percentage": 0.017880202642296613
+        },
+        "Zipcode": {
+          "type": "float64",
+          "missing_count": "340",
+          "missing_percentage": 0.11257905367371941,
+          "unique_values": 93978,
+          "unique_percentage": 31.117512665143536,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Country": {
+          "type": "object",
+          "missing_count": "271",
+          "missing_percentage": 0.0897321280752293,
+          "unique_values": 5,
+          "unique_percentage": 0.001655574318731168
+        },
+        "Age": {
+          "type": "float64",
+          "missing_count": "173",
+          "missing_percentage": 0.0572828714280984,
+          "unique_values": 53,
+          "unique_percentage": 0.017549087778550382,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Gender": {
+          "type": "object",
+          "missing_count": "317",
+          "missing_percentage": 0.10496341180755604,
+          "unique_values": 2,
+          "unique_percentage": 0.0006622297274924672
+        },
+        "Income": {
+          "type": "object",
+          "missing_count": "290",
+          "missing_percentage": 0.09602331048640773,
+          "unique_values": 3,
+          "unique_percentage": 0.0009933445912387007
+        },
+        "Customer_Segment": {
+          "type": "object",
+          "missing_count": "215",
+          "missing_percentage": 0.07118969570544022,
+          "unique_values": 3,
+          "unique_percentage": 0.0009933445912387007
+        },
+        "Date": {
+          "type": "object",
+          "missing_count": "359",
+          "missing_percentage": 0.11887023608489786,
+          "unique_values": 366,
+          "unique_percentage": 0.12118804013112147
+        },
+        "Year": {
+          "type": "float64",
+          "missing_count": "350",
+          "missing_percentage": 0.11589020231118174,
+          "unique_values": 2,
+          "unique_percentage": 0.0006622297274924672,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Month": {
+          "type": "object",
+          "missing_count": "273",
+          "missing_percentage": 0.09039435780272176,
+          "unique_values": 12,
+          "unique_percentage": 0.003973378364954803
+        },
+        "Time": {
+          "type": "object",
+          "missing_count": "350",
+          "missing_percentage": 0.11589020231118174,
+          "unique_values": 83677,
+          "unique_percentage": 27.706698453693583
+        },
+        "Total_Purchases": {
+          "type": "float64",
+          "missing_count": "361",
+          "missing_percentage": 0.11953246581239033,
+          "unique_values": 10,
+          "unique_percentage": 0.003311148637462336,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Amount": {
+          "type": "float64",
+          "missing_count": "357",
+          "missing_percentage": 0.11820800635740539,
+          "unique_values": 299297,
+          "unique_percentage": 99.10168537465647,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Total_Amount": {
+          "type": "float64",
+          "missing_count": "350",
+          "missing_percentage": 0.11589020231118174,
+          "unique_values": 299305,
+          "unique_percentage": 99.10433429356644,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Product_Category": {
+          "type": "object",
+          "missing_count": "283",
+          "missing_percentage": 0.09370550644018409,
+          "unique_values": 5,
+          "unique_percentage": 0.001655574318731168
+        },
+        "Product_Brand": {
+          "type": "object",
+          "missing_count": "281",
+          "missing_percentage": 0.09304327671269164,
+          "unique_values": 18,
+          "unique_percentage": 0.005960067547432204
+        },
+        "Product_Type": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 33,
+          "unique_percentage": 0.010926790503625708
+        },
+        "Feedback": {
+          "type": "object",
+          "missing_count": "184",
+          "missing_percentage": 0.06092513492930697,
+          "unique_values": 4,
+          "unique_percentage": 0.0013244594549849343
+        },
+        "Shipping_Method": {
+          "type": "object",
+          "missing_count": "337",
+          "missing_percentage": 0.11158570908248071,
+          "unique_values": 3,
+          "unique_percentage": 0.0009933445912387007
+        },
+        "Payment_Method": {
+          "type": "object",
+          "missing_count": "297",
+          "missing_percentage": 0.09834111453263138,
+          "unique_values": 4,
+          "unique_percentage": 0.0013244594549849343
+        },
+        "Order_Status": {
+          "type": "object",
+          "missing_count": "235",
+          "missing_percentage": 0.07781199298036488,
+          "unique_values": 4,
+          "unique_percentage": 0.0013244594549849343
+        },
+        "Ratings": {
+          "type": "float64",
+          "missing_count": "184",
+          "missing_percentage": 0.06092513492930697,
+          "unique_values": 5,
+          "unique_percentage": 0.001655574318731168,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "products": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 318,
+          "unique_percentage": 0.10529452667130228
+        }
+      }
+    },
+    "descriptive_stats": {
+      "numeric_summary": {
+        "basic_stats": {
+          "Transaction_ID": {
+            "count": 301677.0,
+            "mean": 5495822.630356308,
+            "std": 2595564.7143142945,
+            "min": 1000007.0,
+            "25%": 3247930.0,
+            "50%": 5499657.0,
+            "75%": 7739509.0,
+            "max": 9999995.0
+          },
+          "Customer_ID": {
+            "count": 301702.0,
+            "mean": 55006.55393401436,
+            "std": 26005.675199707068,
+            "min": 10000.0,
+            "25%": 32469.25,
+            "50%": 55012.0,
+            "75%": 77511.0,
+            "max": 99999.0
+          },
+          "Phone": {
+            "count": 301648.0,
+            "mean": 5501464142.74998,
+            "std": 2596016603.7714076,
+            "min": 1000049414.0,
+            "25%": 3255061091.5,
+            "50%": 5505811969.5,
+            "75%": 7749859742.75,
+            "max": 9999996122.0
+          },
+          "Zipcode": {
+            "count": 301670.0,
+            "mean": 50298.95101932575,
+            "std": 28972.807134039766,
+            "min": 501.0,
+            "25%": 25425.0,
+            "50%": 50602.5,
+            "75%": 75252.0,
+            "max": 99949.0
+          },
+          "Age": {
+            "count": 301837.0,
+            "mean": 35.481326013709385,
+            "std": 15.021932528498109,
+            "min": 18.0,
+            "25%": 22.0,
+            "50%": 32.0,
+            "75%": 46.0,
+            "max": 70.0
+          },
+          "Year": {
+            "count": 301660.0,
+            "mean": 2023.1651130411722,
+            "std": 0.3712831558021409,
+            "min": 2023.0,
+            "25%": 2023.0,
+            "50%": 2023.0,
+            "75%": 2023.0,
+            "max": 2024.0
+          },
+          "Total_Purchases": {
+            "count": 301649.0,
+            "mean": 5.359729354315777,
+            "std": 2.868574626942337,
+            "min": 1.0,
+            "25%": 3.0,
+            "50%": 5.0,
+            "75%": 8.0,
+            "max": 10.0
+          },
+          "Amount": {
+            "count": 301653.0,
+            "mean": 255.1636589628447,
+            "std": 141.38964008754698,
+            "min": 10.00021923,
+            "25%": 132.8907641,
+            "50%": 255.4709688,
+            "75%": 377.672606,
+            "max": 499.997911
+          },
+          "Total_Amount": {
+            "count": 301660.0,
+            "mean": 1367.6511556240314,
+            "std": 1128.9985145052367,
+            "min": 10.00374959,
+            "25%": 438.724278475,
+            "50%": 1041.1175465000001,
+            "75%": 2029.99985325,
+            "max": 4999.625796
+          },
+          "Ratings": {
+            "count": 301826.0,
+            "mean": 3.1626698826476183,
+            "std": 1.3208272247397617,
+            "min": 1.0,
+            "25%": 2.0,
+            "50%": 3.0,
+            "75%": 4.0,
+            "max": 5.0
+          }
+        },
+        "additional_stats": {
+          "Transaction_ID": {
+            "skewness": 0.001652386499402424,
+            "kurtosis": -1.196458327868995,
+            "variance": 6736956186193.445,
+            "coefficient_of_variation": 0.4722795637504075,
+            "range": 8999988.0,
+            "iqr": 4491579.0
+          },
+          "Customer_ID": {
+            "skewness": 0.0006440575033404141,
+            "kurtosis": -1.2001080064803857,
+            "variance": 676295142.5926592,
+            "coefficient_of_variation": 0.47277412126022966,
+            "range": 89999.0,
+            "iqr": 45041.75
+          },
+          "Phone": {
+            "skewness": -0.0014104259424962489,
+            "kurtosis": -1.1990958780821006,
+            "variance": 6.739302207056835e+18,
+            "coefficient_of_variation": 0.4718774014354939,
+            "range": 8999946708.0,
+            "iqr": 4494798651.25
+          },
+          "Zipcode": {
+            "skewness": -0.010908997813863416,
+            "kurtosis": -1.1953553643746275,
+            "variance": 839423553.2262654,
+            "coefficient_of_variation": 0.5760121542675491,
+            "range": 99448.0,
+            "iqr": 49827.0
+          },
+          "Age": {
+            "skewness": 0.6525001644124317,
+            "kurtosis": -0.8078482257325836,
+            "variance": 225.6584568907495,
+            "coefficient_of_variation": 0.423375736371687,
+            "range": 52.0,
+            "iqr": 24.0
+          },
+          "Year": {
+            "skewness": 1.803946711125322,
+            "kurtosis": 1.2542237365796876,
+            "variance": 0.1378511817823968,
+            "coefficient_of_variation": 0.00018351599353353675,
+            "range": 1.0,
+            "iqr": 0.0
+          },
+          "Total_Purchases": {
+            "skewness": 0.072214410107145,
+            "kurtosis": -1.216329006264046,
+            "variance": 8.228720390337367,
+            "coefficient_of_variation": 0.5352088580055809,
+            "range": 9.0,
+            "iqr": 5.0
+          },
+          "Amount": {
+            "skewness": -0.002223995100211936,
+            "kurtosis": -1.1982612443271063,
+            "variance": 19991.030324086074,
+            "coefficient_of_variation": 0.5541135468202987,
+            "range": 489.99769176999996,
+            "iqr": 244.78184189999996
+          },
+          "Total_Amount": {
+            "skewness": 0.9728357437038936,
+            "kurtosis": 0.17521890929494077,
+            "variance": 1274637.6457550314,
+            "coefficient_of_variation": 0.8255018173768864,
+            "range": 4989.622046410001,
+            "iqr": 1591.2755747749998
+          },
+          "Ratings": {
+            "skewness": -0.2416175067394765,
+            "kurtosis": -1.1695453727754959,
+            "variance": 1.7445845576137404,
+            "coefficient_of_variation": 0.4176304431855643,
+            "range": 4.0,
+            "iqr": 2.0
+          }
+        }
+      },
+      "categorical_summary": {
+        "Name": {
+          "unique_count": 159390,
+          "most_frequent": "Michael Smith",
+          "most_frequent_count": 144,
+          "value_counts": {
+            "Michael Smith": 144,
+            "Michael Johnson": 111,
+            "Michael Jones": 102,
+            "Christopher Smith": 93,
+            "Jennifer Smith": 91,
+            "Michael Williams": 91,
+            "James Smith": 89,
+            "Robert Smith": 88,
+            "John Smith": 84,
+            "David Smith": 81
+          },
+          "entropy": 11.581426354512407
+        },
+        "Email": {
+          "unique_count": 52897,
+          "most_frequent": "Michael59@gmail.com",
+          "most_frequent_count": 93,
+          "value_counts": {
+            "Michael59@gmail.com": 93,
+            "Michael95@gmail.com": 92,
+            "Michael17@gmail.com": 90,
+            "Michael39@gmail.com": 87,
+            "Michael50@gmail.com": 84,
+            "Michael58@gmail.com": 84,
+            "Michael93@gmail.com": 83,
+            "Michael55@gmail.com": 83,
+            "Michael40@gmail.com": 82,
+            "Michael90@gmail.com": 82
+          },
+          "entropy": 10.295593985177142
+        },
+        "Address": {
+          "unique_count": 299329,
+          "most_frequent": "637 Abigail Trafficway",
+          "most_frequent_count": 2,
+          "value_counts": {
+            "637 Abigail Trafficway": 2,
+            "94458 Riley Villages": 2,
+            "622 Rachel Fords": 2,
+            "10989 Phyllis Radial": 2,
+            "61922 Donald Key Apt. 770": 2,
+            "17018 Washington Fords Apt. 786": 2,
+            "3612 Kristopher Courts": 2,
+            "54343 Frederick Radial Suite 691": 2,
+            "61323 Cole Fields Apt. 753": 2,
+            "26289 Benjamin Station": 2
+          },
+          "entropy": 12.606300036486493
+        },
+        "City": {
+          "unique_count": 130,
+          "most_frequent": "Chicago",
+          "most_frequent_count": 21652,
+          "value_counts": {
+            "Chicago": 21652,
+            "Portsmouth": 20131,
+            "San Francisco": 12188,
+            "Frankfurt": 10182,
+            "Boston": 9416,
+            "New York": 5455,
+            "Fort Worth": 5206,
+            "London": 4481,
+            "Winnipeg": 2406,
+            "Birmingham": 2382
+          },
+          "entropy": 4.508554901534026
+        },
+        "State": {
+          "unique_count": 54,
+          "most_frequent": "England",
+          "most_frequent_count": 63059,
+          "value_counts": {
+            "England": 63059,
+            "Berlin": 52822,
+            "New South Wales": 45317,
+            "Ontario": 45312,
+            "Connecticut": 21658,
+            "Maine": 12193,
+            "Georgia": 9504,
+            "Kansas": 5516,
+            "New Mexico": 5199,
+            "New York": 996
+          },
+          "entropy": 2.5632676549514275
+        },
+        "Country": {
+          "unique_count": 5,
+          "most_frequent": "USA",
+          "most_frequent_count": 95223,
+          "value_counts": {
+            "USA": 95223,
+            "UK": 63066,
+            "Germany": 52830,
+            "Australia": 45319,
+            "Canada": 45301
+          },
+          "entropy": 1.5656607817212835
+        },
+        "Gender": {
+          "unique_count": 2,
+          "most_frequent": "Male",
+          "most_frequent_count": 187599,
+          "value_counts": {
+            "Male": 187599,
+            "Female": 114094
+          },
+          "entropy": 0.6631656882352251
+        },
+        "Income": {
+          "unique_count": 3,
+          "most_frequent": "Medium",
+          "most_frequent_count": 130230,
+          "value_counts": {
+            "Medium": 130230,
+            "Low": 96261,
+            "High": 75229
+          },
+          "entropy": 1.0734496103010969
+        },
+        "Customer_Segment": {
+          "unique_count": 3,
+          "most_frequent": "Regular",
+          "most_frequent_count": 146221,
+          "value_counts": {
+            "Regular": 146221,
+            "New": 91187,
+            "Premium": 64387
+          },
+          "entropy": 1.0422941720575818
+        },
+        "Date": {
+          "unique_count": 366,
+          "most_frequent": "11/22/2023",
+          "most_frequent_count": 910,
+          "value_counts": {
+            "11/22/2023": 910,
+            "2/22/2024": 904,
+            "7/30/2023": 896,
+            "07-01-23": 896,
+            "12/28/2023": 894,
+            "7/31/2023": 892,
+            "12/25/2023": 891,
+            "01-12-24": 890,
+            "05-10-23": 889,
+            "2/21/2024": 887
+          },
+          "entropy": 5.901999438572643
+        },
+        "Month": {
+          "unique_count": 12,
+          "most_frequent": "April",
+          "most_frequent_count": 41301,
+          "value_counts": {
+            "April": 41301,
+            "January": 37284,
+            "August": 33012,
+            "July": 30886,
+            "May": 28331,
+            "March": 19142,
+            "October": 19126,
+            "December": 18945,
+            "September": 18655,
+            "November": 18416
+          },
+          "entropy": 2.4346127803801187
+        },
+        "Time": {
+          "unique_count": 83677,
+          "most_frequent": "2:55:36",
+          "most_frequent_count": 14,
+          "value_counts": {
+            "2:55:36": 14,
+            "7:45:07": 14,
+            "15:54:27": 14,
+            "2:16:01": 14,
+            "2:18:09": 13,
+            "22:28:22": 13,
+            "1:17:32": 13,
+            "3:02:22": 13,
+            "19:04:26": 13,
+            "8:54:31": 13
+          },
+          "entropy": 11.209595572756324
+        },
+        "Product_Category": {
+          "unique_count": 5,
+          "most_frequent": "Electronics",
+          "most_frequent_count": 71196,
+          "value_counts": {
+            "Electronics": 71196,
+            "Grocery": 66786,
+            "Clothing": 54741,
+            "Books": 54622,
+            "Home Decor": 54382
+          },
+          "entropy": 1.6024518708497633
+        },
+        "Product_Brand": {
+          "unique_count": 18,
+          "most_frequent": "Pepsi",
+          "most_frequent_count": 30292,
+          "value_counts": {
+            "Pepsi": 30292,
+            "Coca-Cola": 18392,
+            "Samsung": 18376,
+            "Zara": 18370,
+            "HarperCollins": 18353,
+            "Sony": 18319,
+            "Bed Bath & Beyond": 18244,
+            "Adidas": 18238,
+            "Home Depot": 18145,
+            "Nike": 18139
+          },
+          "entropy": 2.8160940321857812
+        },
+        "Product_Type": {
+          "unique_count": 33,
+          "most_frequent": "Water",
+          "most_frequent_count": 24459,
+          "value_counts": {
+            "Water": 24459,
+            "Smartphone": 18468,
+            "Non-Fiction": 18172,
+            "Fiction": 18045,
+            "Juice": 12230,
+            "Television": 12197,
+            "T-shirt": 12181,
+            "Decorations": 12178,
+            "Shoes": 12140,
+            "Tablet": 12091
+          },
+          "entropy": 3.3722717688955663
+        },
+        "Feedback": {
+          "unique_count": 4,
+          "most_frequent": "Excellent",
+          "most_frequent_count": 100755,
+          "value_counts": {
+            "Excellent": 100755,
+            "Good": 95098,
+            "Average": 62674,
+            "Bad": 43299
+          },
+          "entropy": 1.3351039444257875
+        },
+        "Shipping_Method": {
+          "unique_count": 3,
+          "most_frequent": "Same-Day",
+          "most_frequent_count": 104156,
+          "value_counts": {
+            "Same-Day": 104156,
+            "Express": 102356,
+            "Standard": 95161
+          },
+          "entropy": 1.0978595308094736
+        },
+        "Payment_Method": {
+          "unique_count": 4,
+          "most_frequent": "Credit Card",
+          "most_frequent_count": 90116,
+          "value_counts": {
+            "Credit Card": 90116,
+            "Debit Card": 76790,
+            "Cash": 73810,
+            "PayPal": 60997
+          },
+          "entropy": 1.3768379663503232
+        },
+        "Order_Status": {
+          "unique_count": 4,
+          "most_frequent": "Delivered",
+          "most_frequent_count": 130449,
+          "value_counts": {
+            "Delivered": 130449,
+            "Shipped": 65024,
+            "Processing": 57199,
+            "Pending": 49103
+          },
+          "entropy": 1.3039650799194058
+        },
+        "products": {
+          "unique_count": 318,
+          "most_frequent": "Spring water",
+          "most_frequent_count": 2508,
+          "value_counts": {
+            "Spring water": 2508,
+            "Bottled water": 2496,
+            "Mystery": 2496,
+            "Artesian water": 2478,
+            "Distilled water": 2475,
+            "Alkaline water": 2448,
+            "Adventure": 2436,
+            "Mineral water": 2431,
+            "Coconut water": 2424,
+            "Flavored water": 2424
+          },
+          "entropy": 5.645629910917731
+        }
+      },
+      "overall_summary": {
+        "numeric_columns_count": 10,
+        "categorical_columns_count": 20,
+        "total_columns": 30
+      }
+    },
+    "correlation_analysis": {
+      "pearson_correlation_matrix": {
+        "Transaction_ID": {
+          "Transaction_ID": 1.0,
+          "Customer_ID": 0.004797769009098289,
+          "Phone": 0.0005150952892811173,
+          "Zipcode": -0.0029644773975944566,
+          "Age": -0.0016301002791475265,
+          "Year": -3.858139265589351e-05,
+          "Total_Purchases": -0.0017175840862163215,
+          "Amount": -0.0030184543419477655,
+          "Total_Amount": -0.0024689051125798126,
+          "Ratings": -0.00031755139963527497
+        },
+        "Customer_ID": {
+          "Transaction_ID": 0.004797769009098289,
+          "Customer_ID": 1.0,
+          "Phone": -0.0009659242627217103,
+          "Zipcode": -0.0024781137540092137,
+          "Age": -0.00016245594108883738,
+          "Year": 0.0004340801721859002,
+          "Total_Purchases": 0.003741490362149134,
+          "Amount": 0.0003417088572299427,
+          "Total_Amount": 0.0028437451566725416,
+          "Ratings": 0.0018350489759366984
+        },
+        "Phone": {
+          "Transaction_ID": 0.0005150952892811173,
+          "Customer_ID": -0.0009659242627217103,
+          "Phone": 1.0,
+          "Zipcode": -0.003075852724440125,
+          "Age": -0.003498466494588714,
+          "Year": 0.002555755420046702,
+          "Total_Purchases": -0.0005683700282275423,
+          "Amount": 0.00016501966404901383,
+          "Total_Amount": -0.00016126892941845008,
+          "Ratings": -0.0009090097772399641
+        },
+        "Zipcode": {
+          "Transaction_ID": -0.0029644773975944566,
+          "Customer_ID": -0.0024781137540092137,
+          "Phone": -0.003075852724440125,
+          "Zipcode": 1.0,
+          "Age": 0.0002775246001622419,
+          "Year": 0.0018091092728417678,
+          "Total_Purchases": 0.0012925527239816986,
+          "Amount": 0.001400637808397839,
+          "Total_Amount": 0.0014068177075822101,
+          "Ratings": -0.002059229429900385
+        },
+        "Age": {
+          "Transaction_ID": -0.0016301002791475265,
+          "Customer_ID": -0.00016245594108883738,
+          "Phone": -0.003498466494588714,
+          "Zipcode": 0.0002775246001622419,
+          "Age": 1.0,
+          "Year": -0.002389720537663624,
+          "Total_Purchases": 0.03332082748942637,
+          "Amount": 0.000845785161339315,
+          "Total_Amount": 0.02253642036625124,
+          "Ratings": 0.166999392895055
+        },
+        "Year": {
+          "Transaction_ID": -3.858139265589351e-05,
+          "Customer_ID": 0.0004340801721859002,
+          "Phone": 0.002555755420046702,
+          "Zipcode": 0.0018091092728417678,
+          "Age": -0.002389720537663624,
+          "Year": 1.0,
+          "Total_Purchases": -0.002242218170994869,
+          "Amount": 0.001719929803059004,
+          "Total_Amount": -0.0018049223294820638,
+          "Ratings": -0.0012625574179193945
+        },
+        "Total_Purchases": {
+          "Transaction_ID": -0.0017175840862163215,
+          "Customer_ID": 0.003741490362149134,
+          "Phone": -0.0005683700282275423,
+          "Zipcode": 0.0012925527239816986,
+          "Age": 0.03332082748942637,
+          "Year": -0.002242218170994869,
+          "Total_Purchases": 1.0,
+          "Amount": 0.0003036358844805093,
+          "Total_Amount": 0.6490856193628768,
+          "Ratings": -0.004596435257631998
+        },
+        "Amount": {
+          "Transaction_ID": -0.0030184543419477655,
+          "Customer_ID": 0.0003417088572299427,
+          "Phone": 0.00016501966404901383,
+          "Zipcode": 0.001400637808397839,
+          "Age": 0.000845785161339315,
+          "Year": 0.001719929803059004,
+          "Total_Purchases": 0.0003036358844805093,
+          "Amount": 1.0,
+          "Total_Amount": 0.6707752221158864,
+          "Ratings": -0.0006632815117207926
+        },
+        "Total_Amount": {
+          "Transaction_ID": -0.0024689051125798126,
+          "Customer_ID": 0.0028437451566725416,
+          "Phone": -0.00016126892941845008,
+          "Zipcode": 0.0014068177075822101,
+          "Age": 0.02253642036625124,
+          "Year": -0.0018049223294820638,
+          "Total_Purchases": 0.6490856193628768,
+          "Amount": 0.6707752221158864,
+          "Total_Amount": 1.0,
+          "Ratings": -0.0038714571130865176
+        },
+        "Ratings": {
+          "Transaction_ID": -0.00031755139963527497,
+          "Customer_ID": 0.0018350489759366984,
+          "Phone": -0.0009090097772399641,
+          "Zipcode": -0.002059229429900385,
+          "Age": 0.166999392895055,
+          "Year": -0.0012625574179193945,
+          "Total_Purchases": -0.004596435257631998,
+          "Amount": -0.0006632815117207926,
+          "Total_Amount": -0.0038714571130865176,
+          "Ratings": 1.0
+        }
+      },
+      "spearman_correlation_matrix": {
+        "Transaction_ID": {
+          "Transaction_ID": 1.0,
+          "Customer_ID": 0.004806193045293604,
+          "Phone": 0.000521419804554128,
+          "Zipcode": -0.002951980658314729,
+          "Age": -0.0012042728690368812,
+          "Year": -3.848219365376079e-05,
+          "Total_Purchases": -0.0017519831296868263,
+          "Amount": -0.003022561075709009,
+          "Total_Amount": -0.0033966793976187726,
+          "Ratings": -0.00028497367989788994
+        },
+        "Customer_ID": {
+          "Transaction_ID": 0.004806193045293604,
+          "Customer_ID": 1.0,
+          "Phone": -0.0009681993781061411,
+          "Zipcode": -0.002475263288905922,
+          "Age": 2.6411802068029772e-05,
+          "Year": 0.00043599647256378424,
+          "Total_Purchases": 0.0037577574561084405,
+          "Amount": 0.00034676728257296096,
+          "Total_Amount": 0.002820876036244024,
+          "Ratings": 0.002011315157668351
+        },
+        "Phone": {
+          "Transaction_ID": 0.000521419804554128,
+          "Customer_ID": -0.0009681993781061411,
+          "Phone": 1.0,
+          "Zipcode": -0.00309224483305574,
+          "Age": -0.00291231825036824,
+          "Year": 0.0025601473758446055,
+          "Total_Purchases": -0.0005838302364542412,
+          "Amount": 0.00016185590650814787,
+          "Total_Amount": -0.0002738033773184318,
+          "Ratings": -0.000902341652629559
+        },
+        "Zipcode": {
+          "Transaction_ID": -0.002951980658314729,
+          "Customer_ID": -0.002475263288905922,
+          "Phone": -0.00309224483305574,
+          "Zipcode": 1.0,
+          "Age": -9.977388817560268e-05,
+          "Year": 0.0018355705133234646,
+          "Total_Purchases": 0.0012046095669936301,
+          "Amount": 0.0013911649137094953,
+          "Total_Amount": 0.0011281896570479641,
+          "Ratings": -0.0019202147913839386
+        },
+        "Age": {
+          "Transaction_ID": -0.0012042728690368812,
+          "Customer_ID": 2.6411802068029772e-05,
+          "Phone": -0.00291231825036824,
+          "Zipcode": -9.977388817560268e-05,
+          "Age": 1.0,
+          "Year": -0.0025783125824334822,
+          "Total_Purchases": 0.043298380419940025,
+          "Amount": 0.0009395491216291178,
+          "Total_Amount": 0.0283453620206857,
+          "Ratings": 0.182781902061456
+        },
+        "Year": {
+          "Transaction_ID": -3.848219365376079e-05,
+          "Customer_ID": 0.00043599647256378424,
+          "Phone": 0.0025601473758446055,
+          "Zipcode": 0.0018355705133234646,
+          "Age": -0.0025783125824334822,
+          "Year": 1.0,
+          "Total_Purchases": -0.0023422206343585443,
+          "Amount": 0.0017178196699463644,
+          "Total_Amount": -0.0006991896855434831,
+          "Ratings": -0.001298899033512638
+        },
+        "Total_Purchases": {
+          "Transaction_ID": -0.0017519831296868263,
+          "Customer_ID": 0.0037577574561084405,
+          "Phone": -0.0005838302364542412,
+          "Zipcode": 0.0012046095669936301,
+          "Age": 0.043298380419940025,
+          "Year": -0.0023422206343585443,
+          "Total_Purchases": 1.0,
+          "Amount": 0.00025340676212244655,
+          "Total_Amount": 0.6509593559073112,
+          "Ratings": -0.004772612731307507
+        },
+        "Amount": {
+          "Transaction_ID": -0.003022561075709009,
+          "Customer_ID": 0.00034676728257296096,
+          "Phone": 0.00016185590650814787,
+          "Zipcode": 0.0013911649137094953,
+          "Age": 0.0009395491216291178,
+          "Year": 0.0017178196699463644,
+          "Total_Purchases": 0.00025340676212244655,
+          "Amount": 1.0,
+          "Total_Amount": 0.700311465540832,
+          "Ratings": -0.000658633714825482
+        },
+        "Total_Amount": {
+          "Transaction_ID": -0.0033966793976187726,
+          "Customer_ID": 0.002820876036244024,
+          "Phone": -0.0002738033773184318,
+          "Zipcode": 0.0011281896570479641,
+          "Age": 0.0283453620206857,
+          "Year": -0.0006991896855434831,
+          "Total_Purchases": 0.6509593559073112,
+          "Amount": 0.700311465540832,
+          "Total_Amount": 1.0,
+          "Ratings": -0.004287178573919294
+        },
+        "Ratings": {
+          "Transaction_ID": -0.00028497367989788994,
+          "Customer_ID": 0.002011315157668351,
+          "Phone": -0.000902341652629559,
+          "Zipcode": -0.0019202147913839386,
+          "Age": 0.182781902061456,
+          "Year": -0.001298899033512638,
+          "Total_Purchases": -0.004772612731307507,
+          "Amount": -0.000658633714825482,
+          "Total_Amount": -0.004287178573919294,
+          "Ratings": 1.0
+        }
+      },
+      "strong_correlations": [
+        {
+          "variable1": "Total_Purchases",
+          "variable2": "Total_Amount",
+          "pearson_correlation": 0.6490856193628768,
+          "spearman_correlation": 0.6509593559073112,
+          "strength": "Moderate"
+        },
+        {
+          "variable1": "Amount",
+          "variable2": "Total_Amount",
+          "pearson_correlation": 0.6707752221158864,
+          "spearman_correlation": 0.700311465540832,
+          "strength": "Moderate"
+        }
+      ],
+      "correlation_summary": {
+        "total_pairs": 45,
+        "strong_correlations_count": 2,
+        "threshold_used": 0.5
+      }
+    },
+    "distribution_analysis": {
+      "Transaction_ID": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.05715286100617961,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.001652386499402424,
+          "kurtosis": -1.196458327868995,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Customer_ID": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.05790370757999114,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.0006440575033404141,
+          "kurtosis": -1.2001080064803857,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Phone": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.0573785101209785,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.0014104259424962489,
+          "kurtosis": -1.1990958780821006,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Zipcode": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.05636048506365832,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.010908997813863416,
+          "kurtosis": -1.1953553643746275,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Age": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.18848997829668818,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.6525001644124317,
+          "kurtosis": -0.8078482257325836,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      },
+      "Year": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.5066220047044732,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 1.803946711125322,
+          "kurtosis": 1.2542237365796876,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      },
+      "Total_Purchases": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.11177300820175767,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.072214410107145,
+          "kurtosis": -1.216329006264046,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Amount": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.05742289706814674,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.002223995100211936,
+          "kurtosis": -1.1982612443271063,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Total_Amount": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.11531664449784101,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.9728357437038936,
+          "kurtosis": 0.17521890929494077,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      },
+      "Ratings": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.22800892359097336,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.2416175067394765,
+          "kurtosis": -1.1695453727754959,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      }
+    },
+    "outlier_detection": {
+      "Transaction_ID": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -3489438.5,
+          "upper_bound": 14476877.5,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Customer_ID": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -35093.375,
+          "upper_bound": 145073.625,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Phone": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -3487136885.375,
+          "upper_bound": 14492057719.625,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Zipcode": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -49315.5,
+          "upper_bound": 149992.5,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Age": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -14.0,
+          "upper_bound": 82.0,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Year": {
+        "iqr_method": {
+          "count": 49808,
+          "percentage": 16.51130411721806,
+          "lower_bound": 2023.0,
+          "upper_bound": 2023.0,
+          "outlier_values": [
+            2024.0,
+            2024.0,
+            2024.0,
+            2024.0,
+            2024.0,
+            2024.0,
+            2024.0,
+            2024.0,
+            2024.0,
+            2024.0
+          ]
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Total_Purchases": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -4.5,
+          "upper_bound": 15.5,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Amount": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -234.2819987499999,
+          "upper_bound": 744.8453688499999,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Total_Amount": {
+        "iqr_method": {
+          "count": 3897,
+          "percentage": 1.2918517536299146,
+          "lower_bound": -1948.1890836874995,
+          "upper_bound": 4416.9132154125,
+          "outlier_values": [
+            4885.287161,
+            4850.773617,
+            4487.12769,
+            4518.677874,
+            4755.346608,
+            4667.216035,
+            4568.265235,
+            4527.369557,
+            4473.94467,
+            4491.517254
+          ]
+        },
+        "zscore_method": {
+          "count": 1441,
+          "percentage": 0.4776901146986674,
+          "outlier_values": [
+            4885.287161,
+            4850.773617,
+            4755.346608,
+            4907.999165,
+            4808.280236,
+            4805.146405,
+            4870.684822,
+            4825.569442,
+            4866.756518,
+            4977.132706
+          ]
+        }
+      },
+      "Ratings": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -1.0,
+          "upper_bound": 7.0,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      }
+    },
+    "hypothesis_tests": {
+      "one_sample_tests": {
+        "Transaction_ID": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 1162.9791986751134,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 5495822.630356308
+        },
+        "Customer_ID": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 1161.8107711099278,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 55006.55393401436
+        },
+        "Phone": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 1163.9144123512715,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 5501464142.74998
+        },
+        "Zipcode": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 953.530115960509,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 50298.95101932575
+        },
+        "Age": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 1297.65807275229,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 35.481326013709385
+        },
+        "Year": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 2992849.953815849,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 2023.1651130411722
+        },
+        "Total_Purchases": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 1026.18970248997,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 5.359729354315777
+        },
+        "Amount": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 991.1857657979152,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 255.1636589628447
+        },
+        "Total_Amount": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 665.3357039437735,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 1367.6511556240312
+        },
+        "Ratings": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 1315.4858320472645,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 3.1626698826476183
+        }
+      },
+      "two_sample_tests": {
+        "Transaction_ID_vs_Customer_ID": {
+          "independent_t_test": {
+            "t_statistic": 1151.3290929686004,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91016554254.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Phone": {
+          "independent_t_test": {
+            "t_statistic": -1162.8070016033312,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Zipcode": {
+          "independent_t_test": {
+            "t_statistic": 1152.250212395539,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91006900590.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Age": {
+          "independent_t_test": {
+            "t_statistic": 1163.2800518477438,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91057280649.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Year": {
+          "independent_t_test": {
+            "t_statistic": 1162.518317339544,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91003883820.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Total_Purchases": {
+          "independent_t_test": {
+            "t_statistic": 1162.9240925383372,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91000565373.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Amount": {
+          "independent_t_test": {
+            "t_statistic": 1162.8789419683555,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91001772081.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": 1162.656917732713,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91003883820.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction_ID_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 1163.2656953217847,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91053962202.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Phone": {
+          "independent_t_test": {
+            "t_statistic": -1164.0069493304081,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Zipcode": {
+          "independent_t_test": {
+            "t_statistic": 66.41548318751641,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 49746679808.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Age": {
+          "independent_t_test": {
+            "t_statistic": 1161.3209014500471,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91064826574.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Year": {
+          "independent_t_test": {
+            "t_statistic": 1119.000966225207,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91011425320.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Total_Purchases": {
+          "independent_t_test": {
+            "t_statistic": 1161.5955171355001,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91008106598.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Amount": {
+          "independent_t_test": {
+            "t_statistic": 1156.31037958368,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91009313406.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": 1131.7794174299652,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91011425320.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Customer_ID_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 1161.9826850392376,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91061507852.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Phone_vs_Zipcode": {
+          "independent_t_test": {
+            "t_statistic": 1163.9462134200726,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90998152160.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Phone_vs_Age": {
+          "independent_t_test": {
+            "t_statistic": 1164.2789783548706,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91048527376.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Phone_vs_Year": {
+          "independent_t_test": {
+            "t_statistic": 1163.9371352324856,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90995135680.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Phone_vs_Total_Purchases": {
+          "independent_t_test": {
+            "t_statistic": 1163.9163404782296,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90991817552.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Phone_vs_Amount": {
+          "independent_t_test": {
+            "t_statistic": 1163.924004639719,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90993024144.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Phone_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": 1163.9372739186051,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90995135680.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Phone_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 1164.2577697590891,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91045209248.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Zipcode_vs_Age": {
+          "independent_t_test": {
+            "t_statistic": 953.1210669526694,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91055167790.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Zipcode_vs_Year": {
+          "independent_t_test": {
+            "t_statistic": 915.1612872496078,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 89702021688.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Zipcode_vs_Total_Purchases": {
+          "independent_t_test": {
+            "t_statistic": 953.3953196246418,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90998453830.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Zipcode_vs_Amount": {
+          "independent_t_test": {
+            "t_statistic": 948.654886283495,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90999660510.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Zipcode_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": 926.8843957765266,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90141623900.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Zipcode_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 953.7166578621137,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91051849420.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Age_vs_Year": {
+          "independent_t_test": {
+            "t_statistic": -72652.04075413499,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Age_vs_Total_Purchases": {
+          "independent_t_test": {
+            "t_statistic": 1081.7589220552593,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91048829213.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Age_vs_Amount": {
+          "independent_t_test": {
+            "t_statistic": -848.838127821349,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 4740391501.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Age_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": -648.2074213371094,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 751634552.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Age_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 1177.425789447028,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91102254362.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Year_vs_Total_Purchases": {
+          "independent_t_test": {
+            "t_statistic": 383145.95421867404,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90995437340.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Year_vs_Amount": {
+          "independent_t_test": {
+            "t_statistic": 6867.875201593418,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 90996643980.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Year_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": 318.8947817034196,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 68146731656.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Year_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 808647.8272672651,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91048831160.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Total_Purchases_vs_Amount": {
+          "independent_t_test": {
+            "t_statistic": -970.1597645420716,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Total_Purchases_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": -662.7140774308659,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Total_Purchases_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 382.1891033648459,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 65446770761.5,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Amount_vs_Total_Amount": {
+          "independent_t_test": {
+            "t_statistic": -537.0026509194446,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 12516332237.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Amount_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 979.1382589374588,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91046718378.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Total_Amount_vs_Ratings": {
+          "independent_t_test": {
+            "t_statistic": 663.9792869924199,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 91048831160.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        }
+      },
+      "anova_tests": {}
+    },
+    "time_series_analysis": {
+      "Time": {
+        "date_range": {
+          "start": "2025-09-07 00:00:00",
+          "end": "2025-09-07 23:59:59",
+          "duration_days": 0
+        },
+        "frequency_analysis": {
+          "total_records": 301660,
+          "unique_dates": 83677,
+          "most_common_interval": "0 days 00:00:00",
+          "avg_interval": "0 days 00:00:00.286412803",
+          "data_coverage": {
+            "daily_coverage": 1,
+            "monthly_coverage": 1,
+            "yearly_coverage": 1
+          }
+        },
+        "trend_analysis": {
+          "Transaction_ID": {
+            "slope": -0.08098628145446439,
+            "r_squared": 7.366765401675121e-06,
+            "p_value": 0.1362511433802453,
+            "trend_direction": "decreasing",
+            "significant_trend": false
+          },
+          "Customer_ID": {
+            "slope": 0.00035830440408845827,
+            "r_squared": 1.4364994770070467e-06,
+            "p_value": 0.510574895868211,
+            "trend_direction": "increasing",
+            "significant_trend": false
+          },
+          "Phone": {
+            "slope": -43.99753519006451,
+            "r_squared": 2.1731219524380575e-06,
+            "p_value": 0.41841861663033497,
+            "trend_direction": "decreasing",
+            "significant_trend": false
+          }
+        }
+      }
+    },
+    "visualizations": {
+      "generated_files": [
+        "analysis_output/visualizations/retail_data_correlation_heatmap.png",
+        "analysis_output/visualizations/retail_data_distributions.png",
+        "analysis_output/visualizations/retail_data_boxplots.png"
+      ],
+      "descriptions": {
+        "correlation_heatmap": "Correlation matrix showing relationships between numeric variables",
+        "distributions": "Distribution plots for numeric variables",
+        "boxplots": "Box plots for outlier detection in numeric variables"
+      }
+    }
+  },
+  "ai_insights": {
+    "insights": "### 1. Key Findings and Insights\n\n- **Strong Correlations**: There are strong correlations between `Total_Purchases` and `Total_Amount` (0.649) and between `Amount` and `Total_Amount` (0.671). This suggests that as the number of purchases increases, the total amount spent also increases, and that the individual transaction amount has a significant impact on overall sales.\n\n- **Transaction and Customer IDs**: Both `Transaction_ID` and `Customer_ID` are platykurtic, indicating a flatter distribution with fewer extreme values. This suggests a relatively uniform distribution of transactions across customers without significant outliers.\n\n### 2. Data Quality Assessment and Recommendations\n\n- **Missing Values**: At 0.1%, missing values are negligible. However, it\u2019s important to consistently monitor this in future data entries to ensure this remains low.\n\n- **Duplicate Rows**: With 0.0% duplicates, data integrity is high. Continuous checks should be performed, especially after data merges or uploads.\n\n- **Outliers**: The absence of outliers in key identifiers like `Transaction_ID`, `Customer_ID`, and `Phone` indicates a well-structured dataset. Regular outlier analysis should still be conducted, especially for monetary values.\n\n**Recommendations**:\n- Implement regular data audits to ensure ongoing data quality.\n- Utilize automated scripts to detect anomalies in the dataset as new data is collected.\n\n### 3. Business Implications of the Statistical Findings\n\n- **Sales Strategies**: The strong correlation between `Total_Purchases` and `Total_Amount` implies that increasing the number of transactions can significantly enhance revenue. Strategies such as promotions or loyalty programs that incentivize repeat purchases could be effective.\n\n- **Customer Insights**: Understanding the relationship between transaction amounts and total sales can guide marketing efforts. For instance, targeting high-spending customers with personalized offers could increase total sales volume.\n\n- **Inventory Management**: Insights from the data can help in managing inventory better, as understanding purchasing patterns can facilitate more accurate forecasting and stock management.\n\n### 4. Recommendations for Further Analysis or Data Collection\n\n- **Customer Segmentation**: Further analysis could involve segmenting customers based on `Total_Purchases`, `Total_Amount`, and demographic characteristics to tailor marketing strategies more effectively.\n\n- **Time Series Analysis**: Analyzing the transaction data over time (e.g., daily, weekly, monthly trends) could provide insights into seasonality effects and peak purchasing periods.\n\n- **Product Analytics**: If product-level data is available, analyzing which products drive higher total amounts or purchases could inform inventory and marketing strategies.\n\n### 5. Any Potential Issues or Concerns Identified\n\n- **Data Representation**: The flat distribution of IDs suggests a lack of diversity in customer engagement. If most transactions are concentrated among a few customers, this could pose a risk to long-term business sustainability.\n\n- **Non-normal Distributions**: The platykurtic nature of key identifiers might indicate that the dataset could benefit from transformations or different analytical approaches to account for the flatness.\n\n- **Lack of Contextual Data**: The absence of additional contextual data (like transaction dates, product categories, etc.) limits the depth of insights that can be derived. Consider collecting more granular data on transactions and customer interactions.\n\nOverall, while the dataset is of high quality with actionable insights, attention should be paid to diversifying the customer base and enriching the dataset for deeper analysis.",
+    "model": "gpt-4o-mini",
+    "usage": {}
+  },
+  "executive_summary": {
+    "dataset_overview": {
+      "total_rows": 302010,
+      "total_columns": 30,
+      "file_size_mb": 76.61448287963867,
+      "data_types": 2
+    },
+    "key_findings": [
+      "Found 2 strong correlations between variables",
+      "Outliers detected in 2 columns"
+    ],
+    "data_quality_score": 99.9,
+    "recommendations": [
+      "Explore strong correlations for potential feature engineering"
+    ]
+  }
+}
