@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report - customer_feedback</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .section h3 { color: #555; margin-top: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { color: #666; font-size: 14px; }
+        .quality-score { font-size: 36px; font-weight: bold; }
+        .score-excellent { color: #28a745; }
+        .score-good { color: #17a2b8; }
+        .score-fair { color: #ffc107; }
+        .score-poor { color: #dc3545; }
+        .findings-list { list-style-type: none; padding: 0; }
+        .findings-list li { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #2196f3; }
+        .recommendations-list { list-style-type: none; padding: 0; }
+        .recommendations-list li { background: #fff3e0; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #ff9800; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .data-table th { background-color: #f2f2f2; }
+        .ai-insights { background: #f8f9fa; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .timestamp { color: #666; font-size: 12px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Analysis Report</h1>
+            <h2>customer_feedback</h2>
+            <p class="timestamp">Generated on 2025-09-07 22:11:57</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">20</div>
+                    <div class="metric-label">Total Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">6</div>
+                    <div class="metric-label">Total Columns</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.0 MB</div>
+                    <div class="metric-label">File Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value quality-score score-excellent">100.0%</div>
+                    <div class="metric-label">Data Quality Score</div>
+                </div>
+            </div>
+
+            
+            <h3>Key Findings</h3>
+            <ul class="findings-list">
+                
+                <li>Found 3 strong correlations between variables</li>
+                
+            </ul>
+            
+
+            
+            <h3>Recommendations</h3>
+            <ul class="recommendations-list">
+                
+                <li>Explore strong correlations for potential feature engineering</li>
+                
+            </ul>
+            
+        </div>
+
+        
+        <div class="section">
+            <h2>AI-Powered Insights</h2>
+            <div class="ai-insights">
+                <pre>### Key Findings and Insights
+
+1. **High Correlation Among Variables**:
+   - There is a very strong positive correlation among the three numeric variables: 
+     - **Rating and Satisfaction Score (0.985)**: This indicates that as customers rate their experience higher, their satisfaction score tends to be higher as well.
+     - **Rating and Recommendation Likelihood (0.964)**: Customers who give higher ratings are also more likely to recommend the service/product.
+     - **Satisfaction Score and Recommendation Likelihood (0.973)**: Satisfied customers are likely to recommend the service/product, which is crucial for word-of-mouth marketing.
+
+2. **Overall Positive Feedback**:
+   - The mean ratings (4.19), satisfaction score (80.75), and recommendation likelihood (7.25) suggest that the overall customer sentiment is positive. However, there is room for improvement, especially in the recommendation likelihood, which is slightly lower than the rating and satisfaction scores.
+
+3. **Distribution Characteristics**:
+   - All three numeric variables exhibit platykurtic distributions, meaning they have fewer outliers and are flatter than a normal distribution. Despite this, the normality confirmation suggests that the data is generally consistent and does not contain extreme values that could skew the analysis.
+
+### Data Quality Assessment and Recommendations
+
+1. **Data Quality**:
+   - The dataset shows no missing values or duplicates, which is excellent for analysis. This indicates a high level of data integrity.
+
+2. **Recommendations**:
+   - While the data quality is high, it is crucial to ensure continuous data validation and verification processes are in place to maintain this integrity.
+   - Consider implementing a periodic review of data collection methods to ensure that any new variables or changes in customer feedback mechanisms are accurately reflected in the dataset.
+
+### Business Implications of the Statistical Findings
+
+1. **Focus on Customer Experience**:
+   - The strong correlations indicate that improving the customer rating can significantly enhance satisfaction and the likelihood of recommendations. This suggests that investing in customer experience improvements could yield high returns in customer loyalty and referrals.
+
+2. **Targeted Marketing Strategies**:
+   - Since satisfied customers are likely to recommend the service, businesses could leverage positive feedback in marketing strategies, including testimonials or case studies, to attract new customers.
+
+3. **Product/Service Improvement**:
+   - The high satisfaction scores indicate that the product or service is generally well-received. However, to boost recommendation likelihood, the business may need to identify specific areas for improvement based on customer feedback.
+
+### Recommendations for Further Analysis or Data Collection
+
+1. **Qualitative Feedback**:
+   - Consider collecting qualitative feedback through open-ended questions in future surveys to gain deeper insights into customer sentiments and areas needing improvement.
+
+2. **Segment Analysis**:
+   - It may be beneficial to segment the data by demographic variables or customer behavior to understand different customer groups' specific needs and perceptions.
+
+3. **Longitudinal Studies**:
+   - Conducting studies over time could help identify trends in customer satisfaction and behavior, enabling proactive strategies to maintain or improve customer relationships.
+
+### Potential Issues or Concerns Identified
+
+1. **Sample Size**:
+   - The dataset only contains 20 rows, which is relatively small. This could limit the generalizability of the findings. It is advisable to increase the sample size to enhance reliability and robustness of the conclusions.
+
+2. **Static Data**:
+   - The current dataset appears static and may not reflect real-time customer feedback. Continuous data collection and monitoring are essential to capture ongoing shifts in customer sentiment.
+
+3. **Potential Bias**:
+   - If feedback is collected only through a particular channel (e.g., online surveys), it may not represent the entire customer base. Ensuring diverse data collection methods can mitigate this bias.
+
+By addressing these concerns and implementing the recommendations, businesses can enhance their understanding of customer feedback, improve customer experience, and drive growth.</pre>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2>Data Quality Assessment</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">0.0%</div>
+                    <div class="metric-label">Missing Values</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Duplicate Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">20</div>
+                    <div class="metric-label">Complete Rows</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h2>Strong Correlations</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable 1</th>
+                        <th>Variable 2</th>
+                        <th>Pearson Correlation</th>
+                        <th>Strength</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>rating</td>
+                        <td>satisfaction_score</td>
+                        <td>0.985</td>
+                        <td>Strong</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>rating</td>
+                        <td>recommendation_likelihood</td>
+                        <td>0.964</td>
+                        <td>Strong</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>satisfaction_score</td>
+                        <td>recommendation_likelihood</td>
+                        <td>0.973</td>
+                        <td>Strong</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        <div class="section">
+            <h2>Analysis Metadata</h2>
+            <table class="data-table">
+                <tr><td><strong>Analysis Timestamp</strong></td><td>2025-09-07T22:11:57.806632</td></tr>
+                <tr><td><strong>File Path</strong></td><td>sales_data/customer_feedback.csv</td></tr>
+                <tr><td><strong>Report Version</strong></td><td>1.0</td></tr>
+                
+                <tr><td><strong>AI Model Used</strong></td><td>gpt-4o-mini</td></tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>
