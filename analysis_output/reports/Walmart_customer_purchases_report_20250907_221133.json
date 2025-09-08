@@ -1,0 +1,648 @@
+{
+  "metadata": {
+    "file_path": "sales_data/Walmart_customer_purchases.csv",
+    "file_name": "Walmart_customer_purchases",
+    "analysis_timestamp": "2025-09-07T22:11:45.177252",
+    "report_version": "1.0"
+  },
+  "analysis_results": {
+    "file_info": {
+      "file_name": "Walmart_customer_purchases.csv",
+      "file_path": "sales_data/Walmart_customer_purchases.csv",
+      "file_size_mb": 5.417801856994629,
+      "rows": 50000,
+      "columns": 12,
+      "column_names": [
+        "Customer_ID",
+        "Age",
+        "Gender",
+        "City",
+        "Category",
+        "Product_Name",
+        "Purchase_Date",
+        "Purchase_Amount",
+        "Payment_Method",
+        "Discount_Applied",
+        "Rating",
+        "Repeat_Customer"
+      ],
+      "data_types": {
+        "Customer_ID": "object",
+        "Age": "int64",
+        "Gender": "object",
+        "City": "object",
+        "Category": "object",
+        "Product_Name": "object",
+        "Purchase_Date": "object",
+        "Purchase_Amount": "float64",
+        "Payment_Method": "object",
+        "Discount_Applied": "object",
+        "Rating": "int64",
+        "Repeat_Customer": "object"
+      },
+      "memory_usage_mb": 26.60276222229004
+    },
+    "data_quality": {
+      "missing_values": {
+        "by_column": {
+          "Customer_ID": 0,
+          "Age": 0,
+          "Gender": 0,
+          "City": 0,
+          "Category": 0,
+          "Product_Name": 0,
+          "Purchase_Date": 0,
+          "Purchase_Amount": 0,
+          "Payment_Method": 0,
+          "Discount_Applied": 0,
+          "Rating": 0,
+          "Repeat_Customer": 0
+        },
+        "total_missing": "0",
+        "missing_percentage": 0.0
+      },
+      "duplicate_rows": {
+        "count": "0",
+        "percentage": 0.0
+      },
+      "data_completeness": {
+        "complete_rows": 50000,
+        "complete_percentage": 100.0
+      },
+      "column_quality": {
+        "Customer_ID": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 50000,
+          "unique_percentage": 100.0
+        },
+        "Age": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 43,
+          "unique_percentage": 0.086,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Gender": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 3,
+          "unique_percentage": 0.006
+        },
+        "City": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 25096,
+          "unique_percentage": 50.192
+        },
+        "Category": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 4,
+          "unique_percentage": 0.008
+        },
+        "Product_Name": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 16,
+          "unique_percentage": 0.032
+        },
+        "Purchase_Date": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 366,
+          "unique_percentage": 0.732
+        },
+        "Purchase_Amount": {
+          "type": "float64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 31378,
+          "unique_percentage": 62.756,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Payment_Method": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 4,
+          "unique_percentage": 0.008
+        },
+        "Discount_Applied": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 2,
+          "unique_percentage": 0.004
+        },
+        "Rating": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 5,
+          "unique_percentage": 0.01,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Repeat_Customer": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 2,
+          "unique_percentage": 0.004
+        }
+      }
+    },
+    "descriptive_stats": {
+      "numeric_summary": {
+        "basic_stats": {
+          "Age": {
+            "count": 50000.0,
+            "mean": 38.94522,
+            "std": 12.398137498345006,
+            "min": 18.0,
+            "25%": 28.0,
+            "50%": 39.0,
+            "75%": 50.0,
+            "max": 60.0
+          },
+          "Purchase_Amount": {
+            "count": 50000.0,
+            "mean": 255.53222960000002,
+            "std": 141.57441582936244,
+            "min": 10.01,
+            "25%": 133.05,
+            "50%": 255.04500000000002,
+            "75%": 378.9125,
+            "max": 499.99
+          },
+          "Rating": {
+            "count": 50000.0,
+            "mean": 2.99868,
+            "std": 1.4179557361107544,
+            "min": 1.0,
+            "25%": 2.0,
+            "50%": 3.0,
+            "75%": 4.0,
+            "max": 5.0
+          }
+        },
+        "additional_stats": {
+          "Age": {
+            "skewness": 0.004806385929041784,
+            "kurtosis": -1.2003441282566911,
+            "variance": 153.71381342786856,
+            "coefficient_of_variation": 0.3183481181604573,
+            "range": 42.0,
+            "iqr": 22.0
+          },
+          "Purchase_Amount": {
+            "skewness": -0.00292056572916924,
+            "kurtosis": -1.200280555245974,
+            "variance": 20043.315217425232,
+            "coefficient_of_variation": 0.5540374145796693,
+            "range": 489.98,
+            "iqr": 245.8625
+          },
+          "Rating": {
+            "skewness": -0.0006167228960401759,
+            "kurtosis": -1.307603499553762,
+            "variance": 2.0105984695693913,
+            "coefficient_of_variation": 0.4728599704239047,
+            "range": 4.0,
+            "iqr": 2.0
+          }
+        }
+      },
+      "categorical_summary": {
+        "Customer_ID": {
+          "unique_count": 50000,
+          "most_frequent": "84607c1f-910c-44d5-b89f-e1ee06dd34c0",
+          "most_frequent_count": 1,
+          "value_counts": {
+            "84607c1f-910c-44d5-b89f-e1ee06dd34c0": 1,
+            "fcc34fb5-0f73-480e-8af8-d60e16cca3a6": 1,
+            "5819e86d-1cb2-4782-a657-f48bb6ae4aad": 1,
+            "918525a9-319e-4d72-ab03-d2a92d244569": 1,
+            "d314d0a5-af62-4ae4-84b0-4e5729b31f16": 1,
+            "1a74316f-ca60-4249-adc2-2ad9b31fc7e8": 1,
+            "898ccf1e-4b8a-473a-b46d-9b4174b58782": 1,
+            "9900a728-a47e-403b-825f-4f21c82da640": 1,
+            "29e109e5-7277-43e7-ad8d-a230ee66766e": 1,
+            "b61bc258-b539-43ed-9d74-6b8ac91d2664": 1
+          },
+          "entropy": 10.819778284410287
+        },
+        "Gender": {
+          "unique_count": 3,
+          "most_frequent": "Other",
+          "most_frequent_count": 16751,
+          "value_counts": {
+            "Other": 16751,
+            "Male": 16644,
+            "Female": 16605
+          },
+          "entropy": 1.098605435688296
+        },
+        "City": {
+          "unique_count": 25096,
+          "most_frequent": "New Michael",
+          "most_frequent_count": 44,
+          "value_counts": {
+            "New Michael": 44,
+            "North Michael": 42,
+            "Lake Michael": 41,
+            "East Michael": 36,
+            "South Michael": 34,
+            "Port Michael": 34,
+            "West Michael": 33,
+            "West Jennifer": 32,
+            "East Christopher": 32,
+            "South John": 31
+          },
+          "entropy": 9.74090805045921
+        },
+        "Category": {
+          "unique_count": 4,
+          "most_frequent": "Electronics",
+          "most_frequent_count": 12642,
+          "value_counts": {
+            "Electronics": 12642,
+            "Home": 12492,
+            "Beauty": 12447,
+            "Clothing": 12419
+          },
+          "entropy": 1.386270728890757
+        },
+        "Product_Name": {
+          "unique_count": 16,
+          "most_frequent": "Headphones",
+          "most_frequent_count": 3261,
+          "value_counts": {
+            "Headphones": 3261,
+            "T-Shirt": 3206,
+            "Smartwatch": 3177,
+            "Face Cream": 3174,
+            "Sofa Cover": 3156,
+            "Cookware": 3155,
+            "Shampoo": 3145,
+            "Lamp": 3138,
+            "Perfume": 3116,
+            "Laptop": 3110
+          },
+          "entropy": 2.7723835225486426
+        },
+        "Purchase_Date": {
+          "unique_count": 366,
+          "most_frequent": "2024-12-25",
+          "most_frequent_count": 171,
+          "value_counts": {
+            "2024-12-25": 171,
+            "2024-04-25": 171,
+            "2024-11-18": 168,
+            "2025-01-27": 167,
+            "2024-11-11": 167,
+            "2024-11-09": 162,
+            "2024-06-18": 162,
+            "2024-10-30": 160,
+            "2024-06-14": 159,
+            "2024-03-11": 158
+          },
+          "entropy": 5.89915534382323
+        },
+        "Payment_Method": {
+          "unique_count": 4,
+          "most_frequent": "Debit Card",
+          "most_frequent_count": 12589,
+          "value_counts": {
+            "Debit Card": 12589,
+            "Credit Card": 12528,
+            "Cash on Delivery": 12496,
+            "UPI": 12387
+          },
+          "entropy": 1.3862771536506413
+        },
+        "Discount_Applied": {
+          "unique_count": 2,
+          "most_frequent": "No",
+          "most_frequent_count": 25018,
+          "value_counts": {
+            "No": 25018,
+            "Yes": 24982
+          },
+          "entropy": 0.6931469213599228
+        },
+        "Repeat_Customer": {
+          "unique_count": 2,
+          "most_frequent": "Yes",
+          "most_frequent_count": 25244,
+          "value_counts": {
+            "Yes": 25244,
+            "No": 24756
+          },
+          "entropy": 0.693099551003749
+        }
+      },
+      "overall_summary": {
+        "numeric_columns_count": 3,
+        "categorical_columns_count": 9,
+        "total_columns": 12
+      }
+    },
+    "correlation_analysis": {
+      "pearson_correlation_matrix": {
+        "Age": {
+          "Age": 1.0,
+          "Purchase_Amount": -0.001435517351462651,
+          "Rating": -0.008402456106039532
+        },
+        "Purchase_Amount": {
+          "Age": -0.001435517351462651,
+          "Purchase_Amount": 1.0,
+          "Rating": -0.006648314058624438
+        },
+        "Rating": {
+          "Age": -0.008402456106039532,
+          "Purchase_Amount": -0.006648314058624438,
+          "Rating": 1.0
+        }
+      },
+      "spearman_correlation_matrix": {
+        "Age": {
+          "Age": 1.0,
+          "Purchase_Amount": -0.0014054090826655051,
+          "Rating": -0.00839319623371043
+        },
+        "Purchase_Amount": {
+          "Age": -0.0014054090826655051,
+          "Purchase_Amount": 1.0,
+          "Rating": -0.006631656397679842
+        },
+        "Rating": {
+          "Age": -0.00839319623371043,
+          "Purchase_Amount": -0.006631656397679842,
+          "Rating": 1.0
+        }
+      },
+      "strong_correlations": [],
+      "correlation_summary": {
+        "total_pairs": 3,
+        "strong_correlations_count": 0,
+        "threshold_used": 0.5
+      }
+    },
+    "distribution_analysis": {
+      "Age": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.07011097268616423,
+            "p_value": 3.7007114381270136e-214,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.004806385929041784,
+          "kurtosis": -1.2003441282566911,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Purchase_Amount": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.05876021878419513,
+            "p_value": 1.6511761189545528e-150,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.00292056572916924,
+          "kurtosis": -1.200280555245974,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Rating": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": null,
+            "p_value": null,
+            "is_normal": null
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.16143926973553646,
+            "p_value": 0.0,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.0006167228960401759,
+          "kurtosis": -1.307603499553762,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      }
+    },
+    "outlier_detection": {
+      "Age": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -5.0,
+          "upper_bound": 83.0,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Purchase_Amount": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -235.74375000000003,
+          "upper_bound": 747.7062500000001,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Rating": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -1.0,
+          "upper_bound": 7.0,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      }
+    },
+    "hypothesis_tests": {
+      "one_sample_tests": {
+        "Age": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 702.3971086811143,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 38.94522
+        },
+        "Purchase_Amount": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 403.5951216753519,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 255.53222960000002
+        },
+        "Rating": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 472.8816388274995,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 2.99868
+        }
+      },
+      "two_sample_tests": {
+        "Age_vs_Purchase_Amount": {
+          "independent_t_test": {
+            "t_statistic": -340.7796577189133,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 148372814.5,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Age_vs_Rating": {
+          "independent_t_test": {
+            "t_statistic": 644.1154947264089,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 2500000000.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Purchase_Amount_vs_Rating": {
+          "independent_t_test": {
+            "t_statistic": 398.8389144598692,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 2500000000.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        }
+      },
+      "anova_tests": {}
+    },
+    "time_series_analysis": {
+      "Purchase_Date": {
+        "date_range": {
+          "start": "2024-02-10 00:00:00",
+          "end": "2025-02-09 00:00:00",
+          "duration_days": 365
+        },
+        "frequency_analysis": {
+          "total_records": 50000,
+          "unique_dates": 366,
+          "most_common_interval": "0 days 00:00:00",
+          "avg_interval": "0 days 00:10:30.732614652",
+          "data_coverage": {
+            "daily_coverage": 366,
+            "monthly_coverage": 13,
+            "yearly_coverage": 2
+          }
+        },
+        "trend_analysis": {
+          "Age": {
+            "slope": -1.1313316276525331e-05,
+            "r_squared": 0.00017347400631094774,
+            "p_value": 0.003227785574383412,
+            "trend_direction": "decreasing",
+            "significant_trend": true
+          },
+          "Purchase_Amount": {
+            "slope": -7.968535453459405e-05,
+            "r_squared": 6.600166786216545e-05,
+            "p_value": 0.06927873206915992,
+            "trend_direction": "decreasing",
+            "significant_trend": false
+          },
+          "Rating": {
+            "slope": -9.774144003909662e-08,
+            "r_squared": 9.899187888263065e-07,
+            "p_value": 0.8239469955760408,
+            "trend_direction": "decreasing",
+            "significant_trend": false
+          }
+        }
+      }
+    },
+    "visualizations": {
+      "generated_files": [
+        "analysis_output/visualizations/Walmart_customer_purchases_correlation_heatmap.png",
+        "analysis_output/visualizations/Walmart_customer_purchases_distributions.png",
+        "analysis_output/visualizations/Walmart_customer_purchases_boxplots.png"
+      ],
+      "descriptions": {
+        "correlation_heatmap": "Correlation matrix showing relationships between numeric variables",
+        "distributions": "Distribution plots for numeric variables",
+        "boxplots": "Box plots for outlier detection in numeric variables"
+      }
+    }
+  },
+  "ai_insights": {
+    "insights": "### Key Findings and Insights\n\n1. **Demographics**: The average age of customers is approximately 39 years, with a standard deviation of 12.4 years. This suggests that Walmart's customer base is relatively diverse in age, with most customers likely falling between late twenties to early fifties.\n\n2. **Purchasing Behavior**: The average purchase amount is around $255.53, indicating that customers are willing to spend a significant amount per transaction. The standard deviation of $141.57 suggests a considerable variation in purchase amounts, indicating that while many customers may spend around the average, some make substantially higher or lower purchases.\n\n3. **Customer Satisfaction**: The average rating is 3.00, with a standard deviation of 1.42. This indicates that customer satisfaction is average, and there is a spread in how customers perceive their shopping experience. \n\n4. **No Outliers**: The dataset shows no outliers in age, purchase amount, or ratings, which simplifies the analysis and suggests a consistent behavior across customer profiles.\n\n5. **Distribution Characteristics**: All three numeric variables (age, purchase amount, rating) exhibit platykurtic distribution characteristics, indicating a flatter distribution than a normal distribution. This suggests that customer behavior in terms of age and spending does not conform to typical patterns.\n\n### Data Quality Assessment and Recommendations\n\n- **Data Quality**: The dataset is clean with no missing values or duplicates, which is excellent for analysis. This high-quality data allows for more reliable insights and conclusions.\n\n- **Recommendations**:\n  - Regular data audits should be established to ensure ongoing data quality as new data is collected.\n  - Consider enriching the dataset with additional customer demographics (e.g., gender, income level) to enable more granular analysis.\n  - Implement mechanisms for continuous monitoring of data entries to identify and rectify any potential data quality issues in future datasets.\n\n### Business Implications of the Statistical Findings\n\n1. **Targeted Marketing**: The average age and spending behavior can help Walmart tailor marketing strategies and promotions to align with the demographic profile of their primary customer base. For example, campaigns aimed at middle-aged consumers may yield better engagement.\n\n2. **Customer Experience Improvement**: A rating of 3.00 indicates that customer satisfaction is not particularly high. This could prompt Walmart to investigate customer experience further, identifying areas needing improvement (e.g., checkout processes, product availability).\n\n3. **Product Offerings**: The variability in purchase amounts suggests that there may be a segment of high-spending customers. Identifying these customers could allow for targeted promotions or loyalty rewards that could increase retention and spending.\n\n### Recommendations for Further Analysis or Data Collection\n\n1. **Segmentation Analysis**: Perform a customer segmentation analysis based on age and purchase behavior to identify distinct groups and tailor strategies accordingly.\n\n2. **Time Series Analysis**: Collect temporal data (e.g., purchase timestamps) to analyze seasonal trends in buying behavior and adjust inventory or marketing strategies accordingly.\n\n3. **Customer Feedback Analysis**: Implement a qualitative analysis of customer feedback to understand the reasons behind the average ratings and develop initiatives to enhance customer satisfaction.\n\n4. **Cross-Referencing Data**: Cross-reference purchase data with external sources (e.g., socioeconomic data) to identify potential correlations that could inform marketing and product strategies.\n\n### Potential Issues or Concerns Identified\n\n1. **Flat Distributions**: The platykurtic distribution of numerical data indicates less variability in customer behavior than would be expected. This might suggest that the dataset is missing extreme values or that customer spending habits are not fully captured.\n\n2. **Satisfaction Levels**: An average rating of 3.00 could signify underlying issues with customer satisfaction that need immediate attention. This may require further qualitative research to uncover specific pain points.\n\n3. **Limited Insights from Ratings**: With a mean rating of 3 and a standard deviation of 1.42, there may be clusters of dissatisfaction that are not being addressed. Identifying and understanding these clusters would be vital for improving overall customer satisfaction.\n\nBy addressing these insights and recommendations, Walmart can strengthen its customer relationship strategies and enhance overall business performance.",
+    "model": "gpt-4o-mini",
+    "usage": {}
+  },
+  "executive_summary": {
+    "dataset_overview": {
+      "total_rows": 50000,
+      "total_columns": 12,
+      "file_size_mb": 5.417801856994629,
+      "data_types": 3
+    },
+    "key_findings": [],
+    "data_quality_score": 100.0,
+    "recommendations": []
+  }
+}

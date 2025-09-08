@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report - Walmart_customer_purchases</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .section h3 { color: #555; margin-top: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { color: #666; font-size: 14px; }
+        .quality-score { font-size: 36px; font-weight: bold; }
+        .score-excellent { color: #28a745; }
+        .score-good { color: #17a2b8; }
+        .score-fair { color: #ffc107; }
+        .score-poor { color: #dc3545; }
+        .findings-list { list-style-type: none; padding: 0; }
+        .findings-list li { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #2196f3; }
+        .recommendations-list { list-style-type: none; padding: 0; }
+        .recommendations-list li { background: #fff3e0; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #ff9800; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .data-table th { background-color: #f2f2f2; }
+        .ai-insights { background: #f8f9fa; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .timestamp { color: #666; font-size: 12px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Analysis Report</h1>
+            <h2>Walmart_customer_purchases</h2>
+            <p class="timestamp">Generated on 2025-09-07 22:11:45</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">50,000</div>
+                    <div class="metric-label">Total Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">12</div>
+                    <div class="metric-label">Total Columns</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">5.4 MB</div>
+                    <div class="metric-label">File Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value quality-score score-excellent">100.0%</div>
+                    <div class="metric-label">Data Quality Score</div>
+                </div>
+            </div>
+
+            
+
+            
+        </div>
+
+        
+        <div class="section">
+            <h2>AI-Powered Insights</h2>
+            <div class="ai-insights">
+                <pre>### Key Findings and Insights
+
+1. **Demographics**: The average age of customers is approximately 39 years, with a standard deviation of 12.4 years. This suggests that Walmart's customer base is relatively diverse in age, with most customers likely falling between late twenties to early fifties.
+
+2. **Purchasing Behavior**: The average purchase amount is around $255.53, indicating that customers are willing to spend a significant amount per transaction. The standard deviation of $141.57 suggests a considerable variation in purchase amounts, indicating that while many customers may spend around the average, some make substantially higher or lower purchases.
+
+3. **Customer Satisfaction**: The average rating is 3.00, with a standard deviation of 1.42. This indicates that customer satisfaction is average, and there is a spread in how customers perceive their shopping experience. 
+
+4. **No Outliers**: The dataset shows no outliers in age, purchase amount, or ratings, which simplifies the analysis and suggests a consistent behavior across customer profiles.
+
+5. **Distribution Characteristics**: All three numeric variables (age, purchase amount, rating) exhibit platykurtic distribution characteristics, indicating a flatter distribution than a normal distribution. This suggests that customer behavior in terms of age and spending does not conform to typical patterns.
+
+### Data Quality Assessment and Recommendations
+
+- **Data Quality**: The dataset is clean with no missing values or duplicates, which is excellent for analysis. This high-quality data allows for more reliable insights and conclusions.
+
+- **Recommendations**:
+  - Regular data audits should be established to ensure ongoing data quality as new data is collected.
+  - Consider enriching the dataset with additional customer demographics (e.g., gender, income level) to enable more granular analysis.
+  - Implement mechanisms for continuous monitoring of data entries to identify and rectify any potential data quality issues in future datasets.
+
+### Business Implications of the Statistical Findings
+
+1. **Targeted Marketing**: The average age and spending behavior can help Walmart tailor marketing strategies and promotions to align with the demographic profile of their primary customer base. For example, campaigns aimed at middle-aged consumers may yield better engagement.
+
+2. **Customer Experience Improvement**: A rating of 3.00 indicates that customer satisfaction is not particularly high. This could prompt Walmart to investigate customer experience further, identifying areas needing improvement (e.g., checkout processes, product availability).
+
+3. **Product Offerings**: The variability in purchase amounts suggests that there may be a segment of high-spending customers. Identifying these customers could allow for targeted promotions or loyalty rewards that could increase retention and spending.
+
+### Recommendations for Further Analysis or Data Collection
+
+1. **Segmentation Analysis**: Perform a customer segmentation analysis based on age and purchase behavior to identify distinct groups and tailor strategies accordingly.
+
+2. **Time Series Analysis**: Collect temporal data (e.g., purchase timestamps) to analyze seasonal trends in buying behavior and adjust inventory or marketing strategies accordingly.
+
+3. **Customer Feedback Analysis**: Implement a qualitative analysis of customer feedback to understand the reasons behind the average ratings and develop initiatives to enhance customer satisfaction.
+
+4. **Cross-Referencing Data**: Cross-reference purchase data with external sources (e.g., socioeconomic data) to identify potential correlations that could inform marketing and product strategies.
+
+### Potential Issues or Concerns Identified
+
+1. **Flat Distributions**: The platykurtic distribution of numerical data indicates less variability in customer behavior than would be expected. This might suggest that the dataset is missing extreme values or that customer spending habits are not fully captured.
+
+2. **Satisfaction Levels**: An average rating of 3.00 could signify underlying issues with customer satisfaction that need immediate attention. This may require further qualitative research to uncover specific pain points.
+
+3. **Limited Insights from Ratings**: With a mean rating of 3 and a standard deviation of 1.42, there may be clusters of dissatisfaction that are not being addressed. Identifying and understanding these clusters would be vital for improving overall customer satisfaction.
+
+By addressing these insights and recommendations, Walmart can strengthen its customer relationship strategies and enhance overall business performance.</pre>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2>Data Quality Assessment</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">0.0%</div>
+                    <div class="metric-label">Missing Values</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Duplicate Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">50000</div>
+                    <div class="metric-label">Complete Rows</div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="section">
+            <h2>Analysis Metadata</h2>
+            <table class="data-table">
+                <tr><td><strong>Analysis Timestamp</strong></td><td>2025-09-07T22:11:45.177252</td></tr>
+                <tr><td><strong>File Path</strong></td><td>sales_data/Walmart_customer_purchases.csv</td></tr>
+                <tr><td><strong>Report Version</strong></td><td>1.0</td></tr>
+                
+                <tr><td><strong>AI Model Used</strong></td><td>gpt-4o-mini</td></tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>

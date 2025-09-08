@@ -1,0 +1,23 @@
+
+DATA ANALYSIS SUMMARY REPORT
+============================
+File: Walmart_customer_purchases
+Generated: 2025-09-07 22:11:45
+
+DATASET OVERVIEW
+----------------
+Rows: 50,000
+Columns: 12
+File Size: 5.4 MB
+Data Quality Score: 100.0%
+
+KEY FINDINGS
+------------
+
+AI INSIGHTS
+-----------
+### Key Findings and Insights
+
+1. **Demographics**: The average age of customers is approximately 39 years, with a standard deviation of 12.4 years. This suggests that Walmart's customer base is relatively diverse in age, with most customers likely falling between late twenties to early fifties.
+
+2. **Purchasing Behavior**: The average purchase amount is around $255.53, indicating that customers are willing to spend a significant amount per transaction. The standard deviation of $141.57 suggests...
