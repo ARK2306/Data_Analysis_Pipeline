@@ -22,6 +22,7 @@ class AmplifyAPIClient:
     def __init__(self):
         self.api_key = config.amplify_api_key
         self.base_url = config.amplify_base_url
+        self.assistant_id = config.amplify_assistant_id
         self.session = requests.Session()
         self.session.headers.update({
             'Authorization': f'Bearer {self.api_key}',
@@ -37,23 +38,29 @@ class AmplifyAPIClient:
             prompt = self._create_analysis_prompt(analysis_data, file_info)
             
             payload = {
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": "You are a data analyst AI assistant. Analyze the provided statistical data and provide actionable insights, key findings, and recommendations. Focus on business implications and data quality issues."
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
+                "data": {
+                    "temperature": 0.7,
+                    "max_tokens": 2000,
+                    "dataSources": [],
+                    "messages": [
+                        {
+                            "role": "system",
+                            "content": "You are a data analyst AI assistant. Analyze the provided statistical data and provide actionable insights, key findings, and recommendations. Focus on business implications and data quality issues."
+                        },
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+                    "options": {
+                        "skipRag": True,
+                        "model": {"id": "gpt-4o-mini"}
                     }
-                ],
-                "max_tokens": 2000,
-                "temperature": 0.7,
-                "model": "claude-3-sonnet-20240229"
+                }
             }
             
             response = self.session.post(
-                f"{self.base_url}/messages",
+                f"{self.base_url}/chat",
                 json=payload,
                 timeout=30
             )
@@ -61,9 +68,13 @@ class AmplifyAPIClient:
             if response.status_code == 200:
                 result = response.json()
                 logger.info("AI insights generated successfully")
+                # Handle Amplify API response format
+                insights_text = result.get('data', '')
+                model_info = result.get('model', 'gpt-4o-mini')
+                
                 return {
-                    'insights': result.get('content', [{}])[0].get('text', ''),
-                    'model': result.get('model', 'unknown'),
+                    'insights': insights_text,
+                    'model': model_info,
                     'usage': result.get('usage', {})
                 }
             else:
