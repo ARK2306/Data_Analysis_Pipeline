@@ -60,7 +60,7 @@ class AmplifyAPIClient:
             }
             
             response = self.session.post(
-                f"{self.base_url}/chat",
+                f"{self.base_url}/assistants/{self.assistant_id}/chat",
                 json=payload,
                 timeout=30
             )
@@ -529,7 +529,7 @@ class ReportGenerator:
         
         env = Environment()
         env.filters['number_format'] = number_format
-        template = env.from_string(html_template)
+        template = Template(html_template, environment=env)
         
         html_content = template.render(
             file_name=file_name,
