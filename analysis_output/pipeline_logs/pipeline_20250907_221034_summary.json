@@ -1,0 +1,38 @@
+{
+  "pipeline_id": "pipeline_20250907_221034",
+  "data_file": "sales_data/amplify_test.csv",
+  "report_path": "analysis_output/reports/amplify_test_report_20250907_221022.html",
+  "start_time": "2025-09-07T22:10:34.540766",
+  "status": "running",
+  "steps": [
+    {
+      "step": "create_branch",
+      "branch_name": "analysis-pipeline-amplify_test-20250907_221034",
+      "success": true,
+      "duration_seconds": 0.067755,
+      "timestamp": "2025-09-07T22:10:34.540769"
+    },
+    {
+      "step": "commit_artifacts",
+      "artifacts_count": 4,
+      "artifacts": [
+        "analysis_output/reports/amplify_test_report_20250907_221022.html",
+        "analysis_output/visualizations/amplify_test_distributions.png",
+        "analysis_output/visualizations/amplify_test_boxplots.png",
+        "analysis_output/pipeline_summaries/amplify_test_pipeline_20250907_221034.md"
+      ],
+      "success": true,
+      "duration_seconds": 0.356837,
+      "timestamp": "2025-09-07T22:10:34.608560"
+    },
+    {
+      "step": "push_branch",
+      "branch_name": "analysis-pipeline-amplify_test-20250907_221034",
+      "remote": "origin",
+      "success": true,
+      "duration_seconds": 1.080877,
+      "timestamp": "2025-09-07T22:10:34.965414"
+    }
+  ],
+  "branch_name": "analysis-pipeline-amplify_test-20250907_221034"
+}

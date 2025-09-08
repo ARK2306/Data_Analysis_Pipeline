@@ -1,0 +1,850 @@
+{
+  "metadata": {
+    "file_path": "sales_data/retail_sales_dataset.csv",
+    "file_name": "retail_sales_dataset",
+    "analysis_timestamp": "2025-09-07T22:10:49.191173",
+    "report_version": "1.0"
+  },
+  "analysis_results": {
+    "file_info": {
+      "file_name": "retail_sales_dataset.csv",
+      "file_path": "sales_data/retail_sales_dataset.csv",
+      "file_size_mb": 0.0026617050170898438,
+      "rows": 50,
+      "columns": 9,
+      "column_names": [
+        "Transaction ID",
+        "Date",
+        "Customer ID",
+        "Gender",
+        "Age",
+        "Product Category",
+        "Quantity",
+        "Price per Unit",
+        "Total Amount"
+      ],
+      "data_types": {
+        "Transaction ID": "int64",
+        "Date": "object",
+        "Customer ID": "object",
+        "Gender": "object",
+        "Age": "int64",
+        "Product Category": "object",
+        "Quantity": "int64",
+        "Price per Unit": "float64",
+        "Total Amount": "float64"
+      },
+      "memory_usage_mb": 0.012658119201660156
+    },
+    "data_quality": {
+      "missing_values": {
+        "by_column": {
+          "Transaction ID": 0,
+          "Date": 0,
+          "Customer ID": 0,
+          "Gender": 0,
+          "Age": 0,
+          "Product Category": 0,
+          "Quantity": 0,
+          "Price per Unit": 0,
+          "Total Amount": 0
+        },
+        "total_missing": "0",
+        "missing_percentage": 0.0
+      },
+      "duplicate_rows": {
+        "count": "0",
+        "percentage": 0.0
+      },
+      "data_completeness": {
+        "complete_rows": 50,
+        "complete_percentage": 100.0
+      },
+      "column_quality": {
+        "Transaction ID": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 50,
+          "unique_percentage": 100.0,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Date": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 26,
+          "unique_percentage": 52.0
+        },
+        "Customer ID": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 41,
+          "unique_percentage": 82.0
+        },
+        "Gender": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 2,
+          "unique_percentage": 4.0
+        },
+        "Age": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 21,
+          "unique_percentage": 42.0,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Product Category": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 4,
+          "unique_percentage": 8.0
+        },
+        "Quantity": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 4,
+          "unique_percentage": 8.0,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Price per Unit": {
+          "type": "float64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 41,
+          "unique_percentage": 82.0,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Total Amount": {
+          "type": "float64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 45,
+          "unique_percentage": 90.0,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        }
+      }
+    },
+    "descriptive_stats": {
+      "numeric_summary": {
+        "basic_stats": {
+          "Transaction ID": {
+            "count": 50.0,
+            "mean": 1025.5,
+            "std": 14.577379737113251,
+            "min": 1001.0,
+            "25%": 1013.25,
+            "50%": 1025.5,
+            "75%": 1037.75,
+            "max": 1050.0
+          },
+          "Age": {
+            "count": 50.0,
+            "mean": 33.58,
+            "std": 5.588216465501862,
+            "min": 25.0,
+            "25%": 29.0,
+            "50%": 33.0,
+            "75%": 37.75,
+            "max": 45.0
+          },
+          "Quantity": {
+            "count": 50.0,
+            "mean": 1.54,
+            "std": 0.8134080483135291,
+            "min": 1.0,
+            "25%": 1.0,
+            "50%": 1.0,
+            "75%": 2.0,
+            "max": 4.0
+          },
+          "Price per Unit": {
+            "count": 50.0,
+            "mean": 226.5286,
+            "std": 315.9290143985138,
+            "min": 12.5,
+            "25%": 43.4925,
+            "50%": 89.99,
+            "75%": 199.99,
+            "max": 1299.99
+          },
+          "Total Amount": {
+            "count": 50.0,
+            "mean": 253.78099999999998,
+            "std": 311.96517269806037,
+            "min": 25.99,
+            "25%": 75.7425,
+            "50%": 124.995,
+            "75%": 199.99,
+            "max": 1299.99
+          }
+        },
+        "additional_stats": {
+          "Transaction ID": {
+            "skewness": 0.0,
+            "kurtosis": -1.2009603841536614,
+            "variance": 212.5,
+            "coefficient_of_variation": 0.014214899792406876,
+            "range": 49.0,
+            "iqr": 24.5
+          },
+          "Age": {
+            "skewness": 0.30510577584952725,
+            "kurtosis": -0.9846493304481823,
+            "variance": 31.228163265306122,
+            "coefficient_of_variation": 0.16641502279636278,
+            "range": 20.0,
+            "iqr": 8.75
+          },
+          "Quantity": {
+            "skewness": 1.4788522706007212,
+            "kurtosis": 1.501976107086164,
+            "variance": 0.6616326530612245,
+            "coefficient_of_variation": 0.5281870443594344,
+            "range": 3.0,
+            "iqr": 1.0
+          },
+          "Price per Unit": {
+            "skewness": 2.049175893228739,
+            "kurtosis": 3.277079976475367,
+            "variance": 99811.14213881634,
+            "coefficient_of_variation": 1.3946539836405372,
+            "range": 1287.49,
+            "iqr": 156.4975
+          },
+          "Total Amount": {
+            "skewness": 1.9412393697371106,
+            "kurtosis": 2.886387539082704,
+            "variance": 97322.26897653063,
+            "coefficient_of_variation": 1.2292692230626423,
+            "range": 1274.0,
+            "iqr": 124.2475
+          }
+        }
+      },
+      "categorical_summary": {
+        "Date": {
+          "unique_count": 26,
+          "most_frequent": "2023-02-03",
+          "most_frequent_count": 2,
+          "value_counts": {
+            "2023-02-03": 2,
+            "2023-01-16": 2,
+            "2023-02-14": 2,
+            "2023-02-13": 2,
+            "2023-02-12": 2,
+            "2023-02-11": 2,
+            "2023-02-10": 2,
+            "2023-02-09": 2,
+            "2023-02-08": 2,
+            "2023-02-07": 2
+          },
+          "entropy": 3.246601712090598
+        },
+        "Customer ID": {
+          "unique_count": 41,
+          "most_frequent": "C001",
+          "most_frequent_count": 3,
+          "value_counts": {
+            "C001": 3,
+            "C003": 3,
+            "C002": 3,
+            "C004": 2,
+            "C005": 2,
+            "C006": 2,
+            "C032": 1,
+            "C026": 1,
+            "C027": 1,
+            "C028": 1
+          },
+          "entropy": 3.6310951318006928
+        },
+        "Gender": {
+          "unique_count": 2,
+          "most_frequent": "Male",
+          "most_frequent_count": 25,
+          "value_counts": {
+            "Male": 25,
+            "Female": 25
+          },
+          "entropy": 0.6931471805599453
+        },
+        "Product Category": {
+          "unique_count": 4,
+          "most_frequent": "Electronics",
+          "most_frequent_count": 13,
+          "value_counts": {
+            "Electronics": 13,
+            "Clothing": 13,
+            "Beauty": 12,
+            "Sports": 12
+          },
+          "entropy": 1.3854941476499067
+        }
+      },
+      "overall_summary": {
+        "numeric_columns_count": 5,
+        "categorical_columns_count": 4,
+        "total_columns": 9
+      }
+    },
+    "correlation_analysis": {
+      "pearson_correlation_matrix": {
+        "Transaction ID": {
+          "Transaction ID": 1.0,
+          "Age": 0.06601336202525321,
+          "Quantity": -0.08691752789857655,
+          "Price per Unit": -0.01413470734161436,
+          "Total Amount": -0.03912962522844741
+        },
+        "Age": {
+          "Transaction ID": 0.06601336202525321,
+          "Age": 1.0,
+          "Quantity": -0.27234828202063993,
+          "Price per Unit": 0.4906230892257066,
+          "Total Amount": 0.5058592171256105
+        },
+        "Quantity": {
+          "Transaction ID": -0.08691752789857655,
+          "Age": -0.27234828202063993,
+          "Quantity": 1.0,
+          "Price per Unit": -0.3775142465565423,
+          "Total Amount": -0.30371793328843516
+        },
+        "Price per Unit": {
+          "Transaction ID": -0.01413470734161436,
+          "Age": 0.4906230892257066,
+          "Quantity": -0.3775142465565423,
+          "Price per Unit": 1.0,
+          "Total Amount": 0.9850752807784622
+        },
+        "Total Amount": {
+          "Transaction ID": -0.03912962522844741,
+          "Age": 0.5058592171256105,
+          "Quantity": -0.30371793328843516,
+          "Price per Unit": 0.9850752807784622,
+          "Total Amount": 1.0
+        }
+      },
+      "spearman_correlation_matrix": {
+        "Transaction ID": {
+          "Transaction ID": 1.0,
+          "Age": 0.06894573939702178,
+          "Quantity": -0.06770416106241968,
+          "Price per Unit": 0.0163328061251321,
+          "Total Amount": 0.04106332454815833
+        },
+        "Age": {
+          "Transaction ID": 0.06894573939702178,
+          "Age": 1.0,
+          "Quantity": -0.2689739435053654,
+          "Price per Unit": 0.6730208219747426,
+          "Total Amount": 0.7201541658722466
+        },
+        "Quantity": {
+          "Transaction ID": -0.06770416106241968,
+          "Age": -0.2689739435053654,
+          "Quantity": 1.0,
+          "Price per Unit": -0.6525435696814605,
+          "Total Amount": -0.3558407223518021
+        },
+        "Price per Unit": {
+          "Transaction ID": 0.0163328061251321,
+          "Age": 0.6730208219747426,
+          "Quantity": -0.6525435696814605,
+          "Price per Unit": 1.0,
+          "Total Amount": 0.9289163500556632
+        },
+        "Total Amount": {
+          "Transaction ID": 0.04106332454815833,
+          "Age": 0.7201541658722466,
+          "Quantity": -0.3558407223518021,
+          "Price per Unit": 0.9289163500556632,
+          "Total Amount": 1.0
+        }
+      },
+      "strong_correlations": [
+        {
+          "variable1": "Age",
+          "variable2": "Total Amount",
+          "pearson_correlation": 0.5058592171256105,
+          "spearman_correlation": 0.7201541658722466,
+          "strength": "Moderate"
+        },
+        {
+          "variable1": "Price per Unit",
+          "variable2": "Total Amount",
+          "pearson_correlation": 0.9850752807784622,
+          "spearman_correlation": 0.9289163500556632,
+          "strength": "Strong"
+        }
+      ],
+      "correlation_summary": {
+        "total_pairs": 10,
+        "strong_correlations_count": 2,
+        "threshold_used": 0.5
+      }
+    },
+    "distribution_analysis": {
+      "Transaction ID": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.9555826875589973,
+            "p_value": 0.05809186217735019,
+            "is_normal": true
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.06491287002292567,
+            "p_value": 0.9753675393881347,
+            "is_normal": true
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.0,
+          "kurtosis": -1.2009603841536614,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Age": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.9550361630967324,
+            "p_value": 0.05512440552744627,
+            "is_normal": true
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.09784666003330417,
+            "p_value": 0.6880431947317565,
+            "is_normal": true
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.30510577584952725,
+          "kurtosis": -0.9846493304481823,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Quantity": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.6890585812415203,
+            "p_value": 5.2936176671426025e-09,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.3666143419528317,
+            "p_value": 1.5608858308633936e-06,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 1.4788522706007212,
+          "kurtosis": 1.501976107086164,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      },
+      "Price per Unit": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.6671375865643985,
+            "p_value": 2.227767472148752e-09,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.31347249228114377,
+            "p_value": 7.273104697107412e-05,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 2.049175893228739,
+          "kurtosis": 3.277079976475367,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      },
+      "Total Amount": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.6873125984927574,
+            "p_value": 4.933943339871356e-09,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.32844880072291666,
+            "p_value": 2.6343707963705162e-05,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 1.9412393697371106,
+          "kurtosis": 2.886387539082704,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      }
+    },
+    "outlier_detection": {
+      "Transaction ID": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": 976.5,
+          "upper_bound": 1074.5,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Age": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": 15.875,
+          "upper_bound": 50.875,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Quantity": {
+        "iqr_method": {
+          "count": 2,
+          "percentage": 4.0,
+          "lower_bound": -0.5,
+          "upper_bound": 3.5,
+          "outlier_values": [
+            4,
+            4
+          ]
+        },
+        "zscore_method": {
+          "count": 2,
+          "percentage": 4.0,
+          "outlier_values": [
+            4,
+            4
+          ]
+        }
+      },
+      "Price per Unit": {
+        "iqr_method": {
+          "count": 9,
+          "percentage": 18.0,
+          "lower_bound": -191.25375,
+          "upper_bound": 434.73625000000004,
+          "outlier_values": [
+            1299.99,
+            899.99,
+            449.99,
+            699.99,
+            999.99,
+            799.99,
+            599.99,
+            1199.99,
+            449.99
+          ]
+        },
+        "zscore_method": {
+          "count": 2,
+          "percentage": 4.0,
+          "outlier_values": [
+            1299.99,
+            1199.99
+          ]
+        }
+      },
+      "Total Amount": {
+        "iqr_method": {
+          "count": 11,
+          "percentage": 22.0,
+          "lower_bound": -110.62875,
+          "upper_bound": 386.36125000000004,
+          "outlier_values": [
+            599.98,
+            1299.99,
+            899.99,
+            449.99,
+            699.99,
+            399.98,
+            999.99,
+            799.99,
+            599.99,
+            1199.99
+          ]
+        },
+        "zscore_method": {
+          "count": 2,
+          "percentage": 4.0,
+          "outlier_values": [
+            1299.99,
+            1199.99
+          ]
+        }
+      }
+    },
+    "hypothesis_tests": {
+      "one_sample_tests": {
+        "Transaction ID": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 497.44056694951894,
+          "p_value": 2.099162617417532e-92,
+          "significant": true,
+          "mean": 1025.5
+        },
+        "Age": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 42.49056180774097,
+          "p_value": 2.504702213687647e-40,
+          "significant": true,
+          "mean": 33.58
+        },
+        "Quantity": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 13.387431379429236,
+          "p_value": 5.429922106455739e-18,
+          "significant": true,
+          "mean": 1.54
+        },
+        "Price per Unit": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 5.070123410401412,
+          "p_value": 6.0795986437213295e-06,
+          "significant": true,
+          "mean": 226.5286
+        },
+        "Total Amount": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 5.752253191736454,
+          "p_value": 5.62332121062468e-07,
+          "significant": true,
+          "mean": 253.78099999999998
+        }
+      },
+      "two_sample_tests": {
+        "Transaction ID_vs_Age": {
+          "independent_t_test": {
+            "t_statistic": 449.2714190845475,
+            "p_value": 3.305285690321943e-164,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 2500.0,
+            "p_value": 6.938094022068515e-18,
+            "significant": true
+          }
+        },
+        "Transaction ID_vs_Quantity": {
+          "independent_t_test": {
+            "t_statistic": 495.9221142677223,
+            "p_value": 2.0719683028379451e-168,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 2500.0,
+            "p_value": 2.039093270976745e-18,
+            "significant": true
+          }
+        },
+        "Transaction ID_vs_Price per Unit": {
+          "independent_t_test": {
+            "t_statistic": 17.863432100869407,
+            "p_value": 1.3811708772058472e-32,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 2400.0,
+            "p_value": 2.2846530703852367e-15,
+            "significant": true
+          }
+        },
+        "Transaction ID_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": 17.4728788309631,
+            "p_value": 7.219419295854452e-32,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 2400.0,
+            "p_value": 2.2885909169439665e-15,
+            "significant": true
+          }
+        },
+        "Age_vs_Quantity": {
+          "independent_t_test": {
+            "t_statistic": 40.11914228747936,
+            "p_value": 1.263643022012429e-62,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 2500.0,
+            "p_value": 1.9997181645889834e-18,
+            "significant": true
+          }
+        },
+        "Age_vs_Price per Unit": {
+          "independent_t_test": {
+            "t_statistic": -4.317866319592091,
+            "p_value": 3.7736443929371005e-05,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 523.5,
+            "p_value": 5.54616361391258e-07,
+            "significant": true
+          }
+        },
+        "Age_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": -4.990321325396445,
+            "p_value": 2.6160294163579227e-06,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 97.5,
+            "p_value": 1.960765142411237e-15,
+            "significant": true
+          }
+        },
+        "Quantity_vs_Price per Unit": {
+          "independent_t_test": {
+            "t_statistic": -5.035638710184721,
+            "p_value": 2.1689681323893183e-06,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 2.0312576354099555e-18,
+            "significant": true
+          }
+        },
+        "Quantity_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": -5.717327795625313,
+            "p_value": 1.1708935566489758e-07,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 2.0356616581751805e-18,
+            "significant": true
+          }
+        },
+        "Price per Unit_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": -0.434019895915454,
+            "p_value": 0.665228012833977,
+            "significant": false
+          },
+          "mann_whitney_u": {
+            "u_statistic": 1049.0,
+            "p_value": 0.16675926648341066,
+            "significant": false
+          }
+        }
+      },
+      "anova_tests": {}
+    },
+    "time_series_analysis": {
+      "Date": {
+        "date_range": {
+          "start": "2023-01-15 00:00:00",
+          "end": "2023-02-15 00:00:00",
+          "duration_days": 31
+        },
+        "frequency_analysis": {
+          "total_records": 50,
+          "unique_dates": 26,
+          "most_common_interval": "0 days 00:00:00",
+          "avg_interval": "0 days 15:11:01.224489795",
+          "data_coverage": {
+            "daily_coverage": 26,
+            "monthly_coverage": 2,
+            "yearly_coverage": 1
+          }
+        },
+        "trend_analysis": {
+          "Transaction ID": {
+            "slope": 0.9997118847539016,
+            "r_squared": 0.9994238525181982,
+            "p_value": 2.0510952385802693e-79,
+            "trend_direction": "increasing",
+            "significant_trend": true
+          },
+          "Age": {
+            "slope": 0.024921968787515,
+            "r_squared": 0.00422646414170891,
+            "p_value": 0.6537584972364705,
+            "trend_direction": "increasing",
+            "significant_trend": false
+          },
+          "Quantity": {
+            "slope": -0.00475390156062425,
+            "r_squared": 0.007258424653019751,
+            "p_value": 0.5563554679693337,
+            "trend_direction": "decreasing",
+            "significant_trend": false
+          }
+        }
+      }
+    },
+    "visualizations": {
+      "generated_files": [
+        "analysis_output/visualizations/retail_sales_dataset_correlation_heatmap.png",
+        "analysis_output/visualizations/retail_sales_dataset_distributions.png",
+        "analysis_output/visualizations/retail_sales_dataset_boxplots.png"
+      ],
+      "descriptions": {
+        "correlation_heatmap": "Correlation matrix showing relationships between numeric variables",
+        "distributions": "Distribution plots for numeric variables",
+        "boxplots": "Box plots for outlier detection in numeric variables"
+      }
+    }
+  },
+  "ai_insights": {
+    "insights": "### Key Findings and Insights\n\n1. **Age and Total Amount Correlation**: There is a moderate positive correlation (0.506) between Age and Total Amount, suggesting that as customers get older, their total spending tends to increase. This could indicate a preference for higher-value purchases or an accumulation of disposable income.\n\n2. **Price per Unit and Total Amount Correlation**: A very strong correlation (0.985) exists between Price per Unit and Total Amount. This suggests that higher-priced items significantly contribute to the total sale amount, indicating the importance of pricing strategies in boosting revenue.\n\n3. **Quantity Distribution**: The Quantity column exhibits a right-skewed distribution with a mean of 1.54 and a standard deviation of 0.81, suggesting that most transactions involve a small number of items, with few transactions involving larger quantities. \n\n4. **Outlier Presence**: There are 2 outlier transactions in the Quantity column, which represents 4% of the dataset. This indicates a small number of transactions that deviate from the norm, which could be of interest for further investigation.\n\n### Data Quality Assessment and Recommendations\n\n**Assessment**:\n- **Missing Values**: There are no missing values, which is excellent for data integrity.\n- **Duplicate Rows**: No duplicates were found, ensuring that the dataset is unique and reliable for analysis.\n\n**Recommendations**:\n- Continue monitoring for data entry errors or anomalies in future datasets.\n- Regularly perform data validation checks to maintain high data quality, especially when merging datasets or importing new data.\n\n### Business Implications of the Statistical Findings\n\n1. **Targeting Marketing Efforts**: Given the correlation between Age and Total Amount, the business can tailor marketing campaigns to target older demographics who are more likely to spend more. Strategies could include personalized promotions or loyalty programs aimed at this age group.\n\n2. **Pricing Strategy**: The strong correlation between Price per Unit and Total Amount suggests that pricing plays a critical role in revenue generation. The business should consider optimizing pricing strategies to enhance profitability, possibly through dynamic pricing or bundling products that encourage higher spending.\n\n3. **Inventory Management**: The right-skewed distribution of Quantity may suggest that the business should focus on stocking items that are frequently purchased in small quantities, while also considering the few instances of larger purchases as potential high-value transactions that could be marketed differently.\n\n### Recommendations for Further Analysis or Data Collection\n\n1. **Customer Demographics**: Collect additional demographic data (e.g., income level, location) to better understand spending patterns and refine marketing strategies based on more comprehensive customer profiles.\n\n2. **Transaction Trends Over Time**: Analyze sales trends over different time periods (daily, weekly, monthly) to identify peak shopping times and adjust inventory and marketing accordingly.\n\n3. **Product Performance Analysis**: Conduct a deeper analysis of individual products to determine which items yield the highest margins and which may require reevaluation based on sales performance and customer feedback.\n\n4. **Customer Segmentation**: Implement a customer segmentation analysis to categorize customers based on their purchasing behavior, potentially leading to more effective targeted marketing efforts.\n\n### Potential Issues or Concerns Identified\n\n1. **Limited Dataset Size**: With only 50 rows, the dataset may not provide a comprehensive view of customer behavior. Insights drawn should be treated cautiously, and larger datasets should be utilized for more robust analyses.\n\n2. **Outlier Impact**: The presence of outliers in the Quantity may skew results, particularly in analyses involving average quantities sold. Further investigation into these outliers is necessary to determine whether they represent valid transactions or data entry errors.\n\n3. **Skewness in Quantity**: The right skew in Quantity indicates that most customers buy one or two items, which could limit upselling opportunities. Understanding the reasons behind low multi-item purchases may lead to strategies that encourage customers to buy more per transaction.\n\nIn conclusion, while the dataset exhibits good quality with no missing values or duplicates, further analysis and data collection are recommended to enhance understanding of customer behavior and optimize business strategies.",
+    "model": "gpt-4o-mini",
+    "usage": {}
+  },
+  "executive_summary": {
+    "dataset_overview": {
+      "total_rows": 50,
+      "total_columns": 9,
+      "file_size_mb": 0.0026617050170898438,
+      "data_types": 3
+    },
+    "key_findings": [
+      "Found 2 strong correlations between variables",
+      "Outliers detected in 3 columns"
+    ],
+    "data_quality_score": 100.0,
+    "recommendations": [
+      "Explore strong correlations for potential feature engineering"
+    ]
+  }
+}

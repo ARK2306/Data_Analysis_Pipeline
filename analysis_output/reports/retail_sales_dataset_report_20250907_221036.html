@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report - retail_sales_dataset</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .section h3 { color: #555; margin-top: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { color: #666; font-size: 14px; }
+        .quality-score { font-size: 36px; font-weight: bold; }
+        .score-excellent { color: #28a745; }
+        .score-good { color: #17a2b8; }
+        .score-fair { color: #ffc107; }
+        .score-poor { color: #dc3545; }
+        .findings-list { list-style-type: none; padding: 0; }
+        .findings-list li { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #2196f3; }
+        .recommendations-list { list-style-type: none; padding: 0; }
+        .recommendations-list li { background: #fff3e0; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #ff9800; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .data-table th { background-color: #f2f2f2; }
+        .ai-insights { background: #f8f9fa; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .timestamp { color: #666; font-size: 12px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Analysis Report</h1>
+            <h2>retail_sales_dataset</h2>
+            <p class="timestamp">Generated on 2025-09-07 22:10:49</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">50</div>
+                    <div class="metric-label">Total Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">9</div>
+                    <div class="metric-label">Total Columns</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.0 MB</div>
+                    <div class="metric-label">File Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value quality-score score-excellent">100.0%</div>
+                    <div class="metric-label">Data Quality Score</div>
+                </div>
+            </div>
+
+            
+            <h3>Key Findings</h3>
+            <ul class="findings-list">
+                
+                <li>Found 2 strong correlations between variables</li>
+                
+                <li>Outliers detected in 3 columns</li>
+                
+            </ul>
+            
+
+            
+            <h3>Recommendations</h3>
+            <ul class="recommendations-list">
+                
+                <li>Explore strong correlations for potential feature engineering</li>
+                
+            </ul>
+            
+        </div>
+
+        
+        <div class="section">
+            <h2>AI-Powered Insights</h2>
+            <div class="ai-insights">
+                <pre>### Key Findings and Insights
+
+1. **Age and Total Amount Correlation**: There is a moderate positive correlation (0.506) between Age and Total Amount, suggesting that as customers get older, their total spending tends to increase. This could indicate a preference for higher-value purchases or an accumulation of disposable income.
+
+2. **Price per Unit and Total Amount Correlation**: A very strong correlation (0.985) exists between Price per Unit and Total Amount. This suggests that higher-priced items significantly contribute to the total sale amount, indicating the importance of pricing strategies in boosting revenue.
+
+3. **Quantity Distribution**: The Quantity column exhibits a right-skewed distribution with a mean of 1.54 and a standard deviation of 0.81, suggesting that most transactions involve a small number of items, with few transactions involving larger quantities. 
+
+4. **Outlier Presence**: There are 2 outlier transactions in the Quantity column, which represents 4% of the dataset. This indicates a small number of transactions that deviate from the norm, which could be of interest for further investigation.
+
+### Data Quality Assessment and Recommendations
+
+**Assessment**:
+- **Missing Values**: There are no missing values, which is excellent for data integrity.
+- **Duplicate Rows**: No duplicates were found, ensuring that the dataset is unique and reliable for analysis.
+
+**Recommendations**:
+- Continue monitoring for data entry errors or anomalies in future datasets.
+- Regularly perform data validation checks to maintain high data quality, especially when merging datasets or importing new data.
+
+### Business Implications of the Statistical Findings
+
+1. **Targeting Marketing Efforts**: Given the correlation between Age and Total Amount, the business can tailor marketing campaigns to target older demographics who are more likely to spend more. Strategies could include personalized promotions or loyalty programs aimed at this age group.
+
+2. **Pricing Strategy**: The strong correlation between Price per Unit and Total Amount suggests that pricing plays a critical role in revenue generation. The business should consider optimizing pricing strategies to enhance profitability, possibly through dynamic pricing or bundling products that encourage higher spending.
+
+3. **Inventory Management**: The right-skewed distribution of Quantity may suggest that the business should focus on stocking items that are frequently purchased in small quantities, while also considering the few instances of larger purchases as potential high-value transactions that could be marketed differently.
+
+### Recommendations for Further Analysis or Data Collection
+
+1. **Customer Demographics**: Collect additional demographic data (e.g., income level, location) to better understand spending patterns and refine marketing strategies based on more comprehensive customer profiles.
+
+2. **Transaction Trends Over Time**: Analyze sales trends over different time periods (daily, weekly, monthly) to identify peak shopping times and adjust inventory and marketing accordingly.
+
+3. **Product Performance Analysis**: Conduct a deeper analysis of individual products to determine which items yield the highest margins and which may require reevaluation based on sales performance and customer feedback.
+
+4. **Customer Segmentation**: Implement a customer segmentation analysis to categorize customers based on their purchasing behavior, potentially leading to more effective targeted marketing efforts.
+
+### Potential Issues or Concerns Identified
+
+1. **Limited Dataset Size**: With only 50 rows, the dataset may not provide a comprehensive view of customer behavior. Insights drawn should be treated cautiously, and larger datasets should be utilized for more robust analyses.
+
+2. **Outlier Impact**: The presence of outliers in the Quantity may skew results, particularly in analyses involving average quantities sold. Further investigation into these outliers is necessary to determine whether they represent valid transactions or data entry errors.
+
+3. **Skewness in Quantity**: The right skew in Quantity indicates that most customers buy one or two items, which could limit upselling opportunities. Understanding the reasons behind low multi-item purchases may lead to strategies that encourage customers to buy more per transaction.
+
+In conclusion, while the dataset exhibits good quality with no missing values or duplicates, further analysis and data collection are recommended to enhance understanding of customer behavior and optimize business strategies.</pre>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2>Data Quality Assessment</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">0.0%</div>
+                    <div class="metric-label">Missing Values</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Duplicate Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">50</div>
+                    <div class="metric-label">Complete Rows</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h2>Strong Correlations</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable 1</th>
+                        <th>Variable 2</th>
+                        <th>Pearson Correlation</th>
+                        <th>Strength</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Age</td>
+                        <td>Total Amount</td>
+                        <td>0.506</td>
+                        <td>Moderate</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Price per Unit</td>
+                        <td>Total Amount</td>
+                        <td>0.985</td>
+                        <td>Strong</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        <div class="section">
+            <h2>Analysis Metadata</h2>
+            <table class="data-table">
+                <tr><td><strong>Analysis Timestamp</strong></td><td>2025-09-07T22:10:49.191173</td></tr>
+                <tr><td><strong>File Path</strong></td><td>sales_data/retail_sales_dataset.csv</td></tr>
+                <tr><td><strong>Report Version</strong></td><td>1.0</td></tr>
+                
+                <tr><td><strong>AI Model Used</strong></td><td>gpt-4o-mini</td></tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>
