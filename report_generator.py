@@ -68,11 +68,59 @@ class AmplifyAPIClient:
                 }
             else:
                 logger.error(f"Amplify API error: {response.status_code} - {response.text}")
-                return None
+                return self._generate_fallback_insights(analysis_data, file_info)
                 
         except Exception as e:
             logger.error(f"Failed to generate AI insights: {e}")
-            return None
+            return self._generate_fallback_insights(analysis_data, file_info)
+    
+    def _generate_fallback_insights(self, analysis_data: Dict[str, Any], file_info: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate basic insights when Amplify API is unavailable."""
+        logger.info("Generating fallback insights (API unavailable)")
+        
+        insights = []
+        
+        # Data overview insights
+        rows = file_info.get('rows', 0)
+        cols = file_info.get('columns', 0)
+        insights.append(f"Dataset contains {rows:,} records across {cols} dimensions.")
+        
+        # Data quality insights
+        if 'data_quality' in analysis_data:
+            quality = analysis_data['data_quality']
+            missing_pct = quality.get('missing_values', {}).get('missing_percentage', 0)
+            if missing_pct > 0:
+                insights.append(f"Data completeness: {100-missing_pct:.1f}% - consider addressing missing values.")
+            else:
+                insights.append("Data shows excellent completeness with no missing values.")
+        
+        # Statistical insights
+        if 'descriptive_stats' in analysis_data:
+            numeric_cols = len(analysis_data['descriptive_stats'])
+            insights.append(f"Statistical analysis covers {numeric_cols} numerical variables.")
+        
+        # Correlation insights
+        if 'correlations' in analysis_data:
+            strong_corr = sum(1 for corr in analysis_data['correlations'].get('strong_correlations', []))
+            if strong_corr > 0:
+                insights.append(f"Identified {strong_corr} strong correlations between variables.")
+        
+        # Time series insights
+        if analysis_data.get('time_series_analysis', {}).get('has_time_series', False):
+            insights.append("Dataset contains time-series data suitable for trend analysis.")
+        
+        # Generic recommendations
+        insights.extend([
+            "Consider performing customer segmentation analysis for targeted insights.",
+            "Explore seasonal patterns if temporal data is available.",
+            "Monitor key performance indicators for business optimization."
+        ])
+        
+        return {
+            'insights': "\n\n".join([f"• {insight}" for insight in insights]),
+            'model': 'fallback-generator',
+            'usage': {'fallback': True}
+        }
     
     def _create_analysis_prompt(self, analysis_data: Dict[str, Any], file_info: Dict[str, Any]) -> str:
         """Create a comprehensive prompt for AI analysis."""
@@ -457,13 +505,20 @@ class ReportGenerator:
         else:
             quality_score_class = 'score-poor'
         
-        template = Template(html_template)
+        # Create Jinja2 environment with custom filters
+        from jinja2 import Environment
         
-        # Add number formatting filter
         def number_format(value):
-            return f"{value:,}"
+            if value is None:
+                return "0"
+            try:
+                return f"{int(value):,}"
+            except (ValueError, TypeError):
+                return str(value)
         
-        template.globals['number_format'] = number_format
+        env = Environment()
+        env.filters['number_format'] = number_format
+        template = env.from_string(html_template)
         
         html_content = template.render(
             file_name=file_name,

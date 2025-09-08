@@ -13,11 +13,8 @@ class Config:
         
     @property
     def amplify_api_key(self) -> str:
-        """Get Amplify API key from environment variables."""
-        api_key = os.getenv('AMPLIFY_API_KEY')
-        if not api_key:
-            raise ValueError("AMPLIFY_API_KEY environment variable not set")
-        return api_key
+        """Get Amplify API key from environment variables. Returns empty string if not set."""
+        return os.getenv('AMPLIFY_API_KEY', '')
     
     @property
     def amplify_base_url(self) -> str:
@@ -92,7 +89,7 @@ class Config:
     def validate_config(self) -> bool:
         """Validate configuration settings."""
         try:
-            self.amplify_api_key
+            # Just create directories, API key is optional
             self.create_directories()
             return True
         except Exception as e:
