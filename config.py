@@ -22,6 +22,11 @@ class Config:
         return os.getenv('AMPLIFY_BASE_URL', 'https://api.amplify.ai/v1')
     
     @property
+    def amplify_assistant_id(self) -> str:
+        """Get Amplify Assistant ID."""
+        return os.getenv('AMPLIFY_ASSISTANT_ID', '')
+    
+    @property
     def data_directory(self) -> str:
         """Directory to monitor for data files."""
         return os.getenv('DATA_DIRECTORY', './data')

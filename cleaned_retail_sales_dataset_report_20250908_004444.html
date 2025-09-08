@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report - cleaned_retail_sales_dataset</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .section h3 { color: #555; margin-top: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { color: #666; font-size: 14px; }
+        .quality-score { font-size: 36px; font-weight: bold; }
+        .score-excellent { color: #28a745; }
+        .score-good { color: #17a2b8; }
+        .score-fair { color: #ffc107; }
+        .score-poor { color: #dc3545; }
+        .findings-list { list-style-type: none; padding: 0; }
+        .findings-list li { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #2196f3; }
+        .recommendations-list { list-style-type: none; padding: 0; }
+        .recommendations-list li { background: #fff3e0; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #ff9800; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .data-table th { background-color: #f2f2f2; }
+        .ai-insights { background: #f8f9fa; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .timestamp { color: #666; font-size: 12px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Analysis Report</h1>
+            <h2>cleaned_retail_sales_dataset</h2>
+            <p class="timestamp">Generated on 2025-09-08 00:44:44</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">1,000</div>
+                    <div class="metric-label">Total Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">10</div>
+                    <div class="metric-label">Total Columns</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.1 MB</div>
+                    <div class="metric-label">File Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value quality-score score-excellent">100.0%</div>
+                    <div class="metric-label">Data Quality Score</div>
+                </div>
+            </div>
+
+            
+            <h3>Key Findings</h3>
+            <ul class="findings-list">
+                
+                <li>Found 3 strong correlations between variables</li>
+                
+                <li>Outliers detected in 1 columns</li>
+                
+            </ul>
+            
+
+            
+            <h3>Recommendations</h3>
+            <ul class="recommendations-list">
+                
+                <li>Explore strong correlations for potential feature engineering</li>
+                
+            </ul>
+            
+        </div>
+
+        
+        <div class="section">
+            <h2>AI-Powered Insights</h2>
+            <div class="ai-insights">
+                <pre>• Dataset contains 1,000 records across 10 dimensions.
+
+• Data completeness: 100.0% - consider addressing missing values.
+
+• Statistical analysis covers 3 numerical variables.
+
+• Consider performing customer segmentation analysis for targeted insights.
+
+• Explore seasonal patterns if temporal data is available.
+
+• Monitor key performance indicators for business optimization.</pre>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2>Data Quality Assessment</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">0.0%</div>
+                    <div class="metric-label">Missing Values</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Duplicate Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">999</div>
+                    <div class="metric-label">Complete Rows</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h2>Strong Correlations</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable 1</th>
+                        <th>Variable 2</th>
+                        <th>Pearson Correlation</th>
+                        <th>Strength</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Price per Unit</td>
+                        <td>Total Amount</td>
+                        <td>0.852</td>
+                        <td>Strong</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Price per Unit</td>
+                        <td>Daily Percent Change</td>
+                        <td>0.512</td>
+                        <td>Moderate</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Total Amount</td>
+                        <td>Daily Percent Change</td>
+                        <td>0.596</td>
+                        <td>Moderate</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        <div class="section">
+            <h2>Analysis Metadata</h2>
+            <table class="data-table">
+                <tr><td><strong>Analysis Timestamp</strong></td><td>2025-09-08T00:44:44.464175</td></tr>
+                <tr><td><strong>File Path</strong></td><td>sales_data/cleaned_retail_sales_dataset.csv</td></tr>
+                <tr><td><strong>Report Version</strong></td><td>1.0</td></tr>
+                
+                <tr><td><strong>AI Model Used</strong></td><td>fallback-generator</td></tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>

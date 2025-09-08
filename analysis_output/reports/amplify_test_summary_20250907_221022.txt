@@ -1,0 +1,23 @@
+
+DATA ANALYSIS SUMMARY REPORT
+============================
+File: amplify_test
+Generated: 2025-09-07 22:10:34
+
+DATASET OVERVIEW
+----------------
+Rows: 5
+Columns: 3
+File Size: 0.0 MB
+Data Quality Score: 100.0%
+
+KEY FINDINGS
+------------
+
+AI INSIGHTS
+-----------
+### Key Findings and Insights
+
+1. **Sales Performance**: The average sales figure is 1130.00, with a standard deviation of 178.89 indicating a moderate spread around the mean. This suggests that while most sales figures are clustered around the average, there are some noticeable variations.
+
+2. **Distribution Characteristics**: The positive skewness (0.58) indicates that the sales data is right-skewed. This can imply that while most sales figures are relatively lower, there are a few high sales ...
