@@ -1,0 +1,29 @@
+
+DATA ANALYSIS SUMMARY REPORT
+============================
+File: cleaned_retail_sales_dataset
+Generated: 2025-09-07 22:12:12
+
+DATASET OVERVIEW
+----------------
+Rows: 1,000
+Columns: 10
+File Size: 0.1 MB
+Data Quality Score: 100.0%
+
+KEY FINDINGS
+------------
+• Found 3 strong correlations between variables
+• Outliers detected in 1 columns
+
+RECOMMENDATIONS
+---------------
+• Explore strong correlations for potential feature engineering
+
+AI INSIGHTS
+-----------
+### Key Findings and Insights
+
+1. **Correlations**: 
+   - There is a strong positive correlation (0.852) between Price per Unit and Total Amount. This indicates that as the price per unit increases, the total amount spent also increases significantly, which aligns with expectations in retail.
+   - Moderate correlations are observed between Price per Unit and Daily Percent Change (0.512), and between Total Amount and Daily Percent Change (0.596). This suggests that fluctuations in daily sales are...

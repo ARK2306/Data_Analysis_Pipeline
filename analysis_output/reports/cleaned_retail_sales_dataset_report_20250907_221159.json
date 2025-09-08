@@ -1,0 +1,1003 @@
+{
+  "metadata": {
+    "file_path": "sales_data/cleaned_retail_sales_dataset.csv",
+    "file_name": "cleaned_retail_sales_dataset",
+    "analysis_timestamp": "2025-09-07T22:12:12.788108",
+    "report_version": "1.0"
+  },
+  "analysis_results": {
+    "file_info": {
+      "file_name": "cleaned_retail_sales_dataset.csv",
+      "file_path": "sales_data/cleaned_retail_sales_dataset.csv",
+      "file_size_mb": 0.05562305450439453,
+      "rows": 1000,
+      "columns": 10,
+      "column_names": [
+        "Transaction ID",
+        "Date",
+        "Customer ID",
+        "Gender",
+        "Age",
+        "Product Category",
+        "Quantity",
+        "Price per Unit",
+        "Total Amount",
+        "Daily Percent Change"
+      ],
+      "data_types": {
+        "Transaction ID": "int64",
+        "Date": "object",
+        "Customer ID": "object",
+        "Gender": "object",
+        "Age": "int64",
+        "Product Category": "object",
+        "Quantity": "int64",
+        "Price per Unit": "int64",
+        "Total Amount": "int64",
+        "Daily Percent Change": "float64"
+      },
+      "memory_usage_mb": 0.26184558868408203
+    },
+    "data_quality": {
+      "missing_values": {
+        "by_column": {
+          "Transaction ID": 0,
+          "Date": 0,
+          "Customer ID": 0,
+          "Gender": 0,
+          "Age": 0,
+          "Product Category": 0,
+          "Quantity": 0,
+          "Price per Unit": 0,
+          "Total Amount": 0,
+          "Daily Percent Change": 1
+        },
+        "total_missing": "1",
+        "missing_percentage": 0.01
+      },
+      "duplicate_rows": {
+        "count": "0",
+        "percentage": 0.0
+      },
+      "data_completeness": {
+        "complete_rows": 999,
+        "complete_percentage": 99.9
+      },
+      "column_quality": {
+        "Transaction ID": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 1000,
+          "unique_percentage": 100.0,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Date": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 345,
+          "unique_percentage": 34.5
+        },
+        "Customer ID": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 1000,
+          "unique_percentage": 100.0
+        },
+        "Gender": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 2,
+          "unique_percentage": 0.2
+        },
+        "Age": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 47,
+          "unique_percentage": 4.7,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Product Category": {
+          "type": "object",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 3,
+          "unique_percentage": 0.3
+        },
+        "Quantity": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 4,
+          "unique_percentage": 0.4,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Price per Unit": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 5,
+          "unique_percentage": 0.5,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Total Amount": {
+          "type": "int64",
+          "missing_count": "0",
+          "missing_percentage": 0.0,
+          "unique_values": 18,
+          "unique_percentage": 1.7999999999999998,
+          "zero_count": "0",
+          "negative_count": "0",
+          "infinite_count": "0"
+        },
+        "Daily Percent Change": {
+          "type": "float64",
+          "missing_count": "1",
+          "missing_percentage": 0.1,
+          "unique_values": 101,
+          "unique_percentage": 10.100000000000001,
+          "zero_count": "57",
+          "negative_count": "474",
+          "infinite_count": "0"
+        }
+      }
+    },
+    "descriptive_stats": {
+      "numeric_summary": {
+        "basic_stats": {
+          "Transaction ID": {
+            "count": 1000.0,
+            "mean": 500.5,
+            "std": 288.8194360957494,
+            "min": 1.0,
+            "25%": 250.75,
+            "50%": 500.5,
+            "75%": 750.25,
+            "max": 1000.0
+          },
+          "Age": {
+            "count": 1000.0,
+            "mean": 41.392,
+            "std": 13.681429659122527,
+            "min": 18.0,
+            "25%": 29.0,
+            "50%": 42.0,
+            "75%": 53.0,
+            "max": 64.0
+          },
+          "Quantity": {
+            "count": 1000.0,
+            "mean": 2.514,
+            "std": 1.1327343409145356,
+            "min": 1.0,
+            "25%": 1.0,
+            "50%": 3.0,
+            "75%": 4.0,
+            "max": 4.0
+          },
+          "Price per Unit": {
+            "count": 1000.0,
+            "mean": 179.89,
+            "std": 189.68135627129232,
+            "min": 25.0,
+            "25%": 30.0,
+            "50%": 50.0,
+            "75%": 300.0,
+            "max": 500.0
+          },
+          "Total Amount": {
+            "count": 1000.0,
+            "mean": 456.0,
+            "std": 559.997631555123,
+            "min": 25.0,
+            "25%": 60.0,
+            "50%": 135.0,
+            "75%": 900.0,
+            "max": 2000.0
+          },
+          "Daily Percent Change": {
+            "count": 999.0,
+            "mean": 390.526832384995,
+            "std": 1026.4774738990611,
+            "min": -98.75,
+            "25%": -75.0,
+            "50%": 0.0,
+            "75%": 260.0,
+            "max": 7900.0
+          }
+        },
+        "additional_stats": {
+          "Transaction ID": {
+            "skewness": 0.0,
+            "kurtosis": -1.2000024000024,
+            "variance": 83416.66666666667,
+            "coefficient_of_variation": 0.5770618103811176,
+            "range": 999.0,
+            "iqr": 499.5
+          },
+          "Age": {
+            "skewness": -0.048739204593428495,
+            "kurtosis": -1.2012082655112208,
+            "variance": 187.18151751751753,
+            "coefficient_of_variation": 0.3305331865849083,
+            "range": 46.0,
+            "iqr": 24.0
+          },
+          "Quantity": {
+            "skewness": -0.0140147947650473,
+            "kurtosis": -1.39190690704194,
+            "variance": 1.2830870870870872,
+            "coefficient_of_variation": 0.450570541334342,
+            "range": 3.0,
+            "iqr": 3.0
+          },
+          "Price per Unit": {
+            "skewness": 0.7352028558846894,
+            "kurtosis": -1.139303485365681,
+            "variance": 35979.016916916924,
+            "coefficient_of_variation": 1.0544296863154836,
+            "range": 475.0,
+            "iqr": 270.0
+          },
+          "Total Amount": {
+            "skewness": 1.3740631909684091,
+            "kurtosis": 0.8049678933219302,
+            "variance": 313597.34734734736,
+            "coefficient_of_variation": 1.228064981480533,
+            "range": 1975.0,
+            "iqr": 840.0
+          },
+          "Daily Percent Change": {
+            "skewness": 3.8161842717222827,
+            "kurtosis": 18.011869845710525,
+            "variance": 1053656.0044221976,
+            "coefficient_of_variation": 2.6284428847826873,
+            "range": 7998.75,
+            "iqr": 335.0
+          }
+        }
+      },
+      "categorical_summary": {
+        "Date": {
+          "unique_count": 345,
+          "most_frequent": "16-05-2023",
+          "most_frequent_count": 11,
+          "value_counts": {
+            "16-05-2023": 11,
+            "14-07-2023": 10,
+            "23-05-2023": 9,
+            "05-08-2023": 8,
+            "05-02-2023": 8,
+            "11-10-2023": 7,
+            "23-04-2023": 7,
+            "02-11-2023": 6,
+            "23-12-2023": 6,
+            "19-04-2023": 6
+          },
+          "entropy": 5.706224421336422
+        },
+        "Customer ID": {
+          "unique_count": 1000,
+          "most_frequent": "CUST001",
+          "most_frequent_count": 1,
+          "value_counts": {
+            "CUST001": 1,
+            "CUST672": 1,
+            "CUST659": 1,
+            "CUST660": 1,
+            "CUST661": 1,
+            "CUST662": 1,
+            "CUST663": 1,
+            "CUST664": 1,
+            "CUST665": 1,
+            "CUST666": 1
+          },
+          "entropy": 6.907755278982134
+        },
+        "Gender": {
+          "unique_count": 2,
+          "most_frequent": "Female",
+          "most_frequent_count": 510,
+          "value_counts": {
+            "Female": 510,
+            "Male": 490
+          },
+          "entropy": 0.6929471672244782
+        },
+        "Product Category": {
+          "unique_count": 3,
+          "most_frequent": "Clothing",
+          "most_frequent_count": 351,
+          "value_counts": {
+            "Clothing": 351,
+            "Electronics": 342,
+            "Beauty": 307
+          },
+          "entropy": 1.0969717839609379
+        }
+      },
+      "overall_summary": {
+        "numeric_columns_count": 6,
+        "categorical_columns_count": 4,
+        "total_columns": 10
+      }
+    },
+    "correlation_analysis": {
+      "pearson_correlation_matrix": {
+        "Transaction ID": {
+          "Transaction ID": 1.0,
+          "Age": 0.06519094641514113,
+          "Quantity": -0.026622522182497613,
+          "Price per Unit": -0.06083662007088511,
+          "Total Amount": -0.07503432030192878,
+          "Daily Percent Change": -0.056230932012148516
+        },
+        "Age": {
+          "Transaction ID": 0.06519094641514113,
+          "Age": 1.0,
+          "Quantity": -0.023736578878484165,
+          "Price per Unit": -0.03842284512698974,
+          "Total Amount": -0.06056802388304548,
+          "Daily Percent Change": -0.05883146804307573
+        },
+        "Quantity": {
+          "Transaction ID": -0.026622522182497613,
+          "Age": -0.023736578878484165,
+          "Quantity": 1.0,
+          "Price per Unit": 0.01750128011595863,
+          "Total Amount": 0.37370705412140565,
+          "Daily Percent Change": 0.21646152159718549
+        },
+        "Price per Unit": {
+          "Transaction ID": -0.06083662007088511,
+          "Age": -0.03842284512698974,
+          "Quantity": 0.01750128011595863,
+          "Price per Unit": 1.0,
+          "Total Amount": 0.8519248403554028,
+          "Daily Percent Change": 0.5124351446906361
+        },
+        "Total Amount": {
+          "Transaction ID": -0.07503432030192878,
+          "Age": -0.06056802388304548,
+          "Quantity": 0.37370705412140565,
+          "Price per Unit": 0.8519248403554028,
+          "Total Amount": 1.0,
+          "Daily Percent Change": 0.5961526619310498
+        },
+        "Daily Percent Change": {
+          "Transaction ID": -0.056230932012148516,
+          "Age": -0.05883146804307573,
+          "Quantity": 0.21646152159718549,
+          "Price per Unit": 0.5124351446906361,
+          "Total Amount": 0.5961526619310498,
+          "Daily Percent Change": 1.0
+        }
+      },
+      "spearman_correlation_matrix": {
+        "Transaction ID": {
+          "Transaction ID": 1.0,
+          "Age": 0.06531360825229603,
+          "Quantity": -0.026795254345100657,
+          "Price per Unit": -0.06711167483125614,
+          "Total Amount": -0.06933133972570536,
+          "Daily Percent Change": -0.08802796045396999
+        },
+        "Age": {
+          "Transaction ID": 0.06531360825229603,
+          "Age": 1.0,
+          "Quantity": -0.023471599318476144,
+          "Price per Unit": -0.03796593255071776,
+          "Total Amount": -0.03786402871804129,
+          "Daily Percent Change": -0.022043850851856246
+        },
+        "Quantity": {
+          "Transaction ID": -0.026795254345100657,
+          "Age": -0.023471599318476144,
+          "Quantity": 1.0,
+          "Price per Unit": 0.024013741727369527,
+          "Total Amount": 0.47410321010140116,
+          "Daily Percent Change": 0.2719469728307918
+        },
+        "Price per Unit": {
+          "Transaction ID": -0.06711167483125614,
+          "Age": -0.03796593255071776,
+          "Quantity": 0.024013741727369527,
+          "Price per Unit": 1.0,
+          "Total Amount": 0.8574385002868721,
+          "Daily Percent Change": 0.6277434497353904
+        },
+        "Total Amount": {
+          "Transaction ID": -0.06933133972570536,
+          "Age": -0.03786402871804129,
+          "Quantity": 0.47410321010140116,
+          "Price per Unit": 0.8574385002868721,
+          "Total Amount": 1.0,
+          "Daily Percent Change": 0.692471159192495
+        },
+        "Daily Percent Change": {
+          "Transaction ID": -0.08802796045396999,
+          "Age": -0.022043850851856246,
+          "Quantity": 0.2719469728307918,
+          "Price per Unit": 0.6277434497353904,
+          "Total Amount": 0.692471159192495,
+          "Daily Percent Change": 1.0
+        }
+      },
+      "strong_correlations": [
+        {
+          "variable1": "Price per Unit",
+          "variable2": "Total Amount",
+          "pearson_correlation": 0.8519248403554028,
+          "spearman_correlation": 0.8574385002868721,
+          "strength": "Strong"
+        },
+        {
+          "variable1": "Price per Unit",
+          "variable2": "Daily Percent Change",
+          "pearson_correlation": 0.5124351446906361,
+          "spearman_correlation": 0.6277434497353904,
+          "strength": "Moderate"
+        },
+        {
+          "variable1": "Total Amount",
+          "variable2": "Daily Percent Change",
+          "pearson_correlation": 0.5961526619310498,
+          "spearman_correlation": 0.692471159192495,
+          "strength": "Moderate"
+        }
+      ],
+      "correlation_summary": {
+        "total_pairs": 15,
+        "strong_correlations_count": 3,
+        "threshold_used": 0.5
+      }
+    },
+    "distribution_analysis": {
+      "Transaction ID": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.9548090258354325,
+            "p_value": 5.388678482840241e-17,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.0575905136963164,
+            "p_value": 0.002523678025278633,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.0,
+          "kurtosis": -1.2000024000024,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Age": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.9524148791153523,
+            "p_value": 1.8233998212466617e-17,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.07174328806090968,
+            "p_value": 6.388244631760953e-05,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.048739204593428495,
+          "kurtosis": -1.2012082655112208,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Quantity": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.8518440340605308,
+            "p_value": 1.3522297082372183e-29,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.17100253701515866,
+            "p_value": 4.8974302414802785e-26,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": -0.0140147947650473,
+          "kurtosis": -1.39190690704194,
+          "is_symmetric": "True",
+          "distribution_type": "Platykurtic (flat)"
+        }
+      },
+      "Price per Unit": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.7236211491395681,
+            "p_value": 1.0552305680695533e-37,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.35725862253934726,
+            "p_value": 9.52828886924229e-115,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 0.7352028558846894,
+          "kurtosis": -1.139303485365681,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      },
+      "Total Amount": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.7489105489094285,
+            "p_value": 2.1785847545498116e-36,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.2802165109840753,
+            "p_value": 6.140421537747308e-70,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 1.3740631909684091,
+          "kurtosis": 0.8049678933219302,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      },
+      "Daily Percent Change": {
+        "normality_tests": {
+          "shapiro_wilk": {
+            "statistic": 0.5095299722432798,
+            "p_value": 4.713727768921241e-46,
+            "is_normal": false
+          },
+          "kolmogorov_smirnov": {
+            "statistic": 0.3168034853651824,
+            "p_value": 1.2145595630450593e-89,
+            "is_normal": false
+          }
+        },
+        "distribution_characteristics": {
+          "skewness": 3.8161842717222827,
+          "kurtosis": 18.011869845710525,
+          "is_symmetric": "False",
+          "distribution_type": "Right-skewed"
+        }
+      }
+    },
+    "outlier_detection": {
+      "Transaction ID": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -498.5,
+          "upper_bound": 1499.5,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Age": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -7.0,
+          "upper_bound": 89.0,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Quantity": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -3.5,
+          "upper_bound": 8.5,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Price per Unit": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -375.0,
+          "upper_bound": 705.0,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Total Amount": {
+        "iqr_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "lower_bound": -1200.0,
+          "upper_bound": 2160.0,
+          "outlier_values": []
+        },
+        "zscore_method": {
+          "count": 0,
+          "percentage": 0.0,
+          "outlier_values": []
+        }
+      },
+      "Daily Percent Change": {
+        "iqr_method": {
+          "count": 169,
+          "percentage": 16.916916916916914,
+          "lower_bound": -577.5,
+          "upper_bound": 762.5,
+          "outlier_values": [
+            1100.0,
+            1566.666667,
+            900.0,
+            1900.0,
+            3500.0,
+            1700.0,
+            3900.0,
+            1400.0,
+            4700.0,
+            1233.333333
+          ]
+        },
+        "zscore_method": {
+          "count": 30,
+          "percentage": 3.003003003003003,
+          "outlier_values": [
+            3500.0,
+            3900.0,
+            4700.0,
+            3900.0,
+            7900.0,
+            3900.0,
+            4900.0,
+            5900.0,
+            5900.0,
+            7900.0
+          ]
+        }
+      }
+    },
+    "hypothesis_tests": {
+      "one_sample_tests": {
+        "Transaction ID": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 54.79963503528103,
+          "p_value": 2.569348768416029e-303,
+          "significant": true,
+          "mean": 500.5
+        },
+        "Age": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 95.67201686587813,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 41.392
+        },
+        "Quantity": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 70.18385291686964,
+          "p_value": 0.0,
+          "significant": true,
+          "mean": 2.514
+        },
+        "Price per Unit": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 29.990408096517033,
+          "p_value": 1.946554231349132e-141,
+          "significant": true,
+          "mean": 179.89
+        },
+        "Total Amount": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 25.750084139326198,
+          "p_value": 1.4790641744812264e-112,
+          "significant": true,
+          "mean": 456.0
+        },
+        "Daily Percent Change": {
+          "test": "One-sample t-test (mean != 0)",
+          "t_statistic": 12.024975487025428,
+          "p_value": 3.350419323138208e-31,
+          "significant": true,
+          "mean": 390.526832384995
+        }
+      },
+      "two_sample_tests": {
+        "Transaction ID_vs_Age": {
+          "independent_t_test": {
+            "t_statistic": 50.211330154979166,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 959108.0,
+            "p_value": 7.019313942153864e-277,
+            "significant": true
+          }
+        },
+        "Transaction ID_vs_Quantity": {
+          "independent_t_test": {
+            "t_statistic": 54.52395839465665,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 997986.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Transaction ID_vs_Price per Unit": {
+          "independent_t_test": {
+            "t_statistic": 29.34152964507148,
+            "p_value": 1.1480954713285847e-157,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 820610.0,
+            "p_value": 9.121286004512134e-137,
+            "significant": true
+          }
+        },
+        "Transaction ID_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": 2.2333515608014762,
+            "p_value": 0.02563609392439406,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 629223.5,
+            "p_value": 1.3757252022290028e-23,
+            "significant": true
+          }
+        },
+        "Transaction ID_vs_Daily Percent Change": {
+          "independent_t_test": {
+            "t_statistic": 3.2611950242042362,
+            "p_value": 0.001128116321165007,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 773640.5,
+            "p_value": 3.576789420694464e-100,
+            "significant": true
+          }
+        },
+        "Age_vs_Quantity": {
+          "independent_t_test": {
+            "t_statistic": 89.55483057249262,
+            "p_value": 0.0,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 1000000.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Age_vs_Price per Unit": {
+          "independent_t_test": {
+            "t_statistic": -23.029901026477535,
+            "p_value": 2.7919961587190767e-104,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 380133.5,
+            "p_value": 1.261867797918906e-20,
+            "significant": true
+          }
+        },
+        "Age_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": -23.40571509207813,
+            "p_value": 2.8584874846757796e-107,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 122526.5,
+            "p_value": 5.2869860477601704e-188,
+            "significant": true
+          }
+        },
+        "Age_vs_Daily Percent Change": {
+          "independent_t_test": {
+            "t_statistic": -10.754872195649527,
+            "p_value": 2.900499056939829e-26,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 585067.5,
+            "p_value": 3.3163255716481956e-11,
+            "significant": true
+          }
+        },
+        "Quantity_vs_Price per Unit": {
+          "independent_t_test": {
+            "t_statistic": -29.570758660336605,
+            "p_value": 1.0305628977709489e-159,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Quantity_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": -25.608067471868335,
+            "p_value": 2.567115462522067e-125,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 0.0,
+            "p_value": 0.0,
+            "significant": true
+          }
+        },
+        "Quantity_vs_Daily Percent Change": {
+          "independent_t_test": {
+            "t_statistic": -11.953539191947595,
+            "p_value": 7.389822808159131e-32,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 531000.0,
+            "p_value": 0.014250375380189015,
+            "significant": true
+          }
+        },
+        "Price per Unit_vs_Total Amount": {
+          "independent_t_test": {
+            "t_statistic": -14.767640292864968,
+            "p_value": 6.419716484033827e-47,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 310952.5,
+            "p_value": 4.119826587331781e-49,
+            "significant": true
+          }
+        },
+        "Price per Unit_vs_Daily Percent Change": {
+          "independent_t_test": {
+            "t_statistic": -6.380970150496976,
+            "p_value": 2.1812394309232463e-10,
+            "significant": true
+          },
+          "mann_whitney_u": {
+            "u_statistic": 654435.0,
+            "p_value": 2.106261500868379e-33,
+            "significant": true
+          }
+        },
+        "Total Amount_vs_Daily Percent Change": {
+          "independent_t_test": {
+            "t_statistic": 1.7704720034134513,
+            "p_value": 0.07680107898840444,
+            "significant": false
+          },
+          "mann_whitney_u": {
+            "u_statistic": 721818.0,
+            "p_value": 1.3522850697073325e-66,
+            "significant": true
+          }
+        }
+      },
+      "anova_tests": {}
+    },
+    "time_series_analysis": {
+      "Date": {
+        "date_range": {
+          "start": "2023-01-01 00:00:00",
+          "end": "2024-01-01 00:00:00",
+          "duration_days": 365
+        },
+        "frequency_analysis": {
+          "total_records": 1000,
+          "unique_dates": 345,
+          "most_common_interval": "0 days 00:00:00",
+          "avg_interval": "0 days 08:46:07.567567567",
+          "data_coverage": {
+            "daily_coverage": 345,
+            "monthly_coverage": 13,
+            "yearly_coverage": 2
+          }
+        },
+        "trend_analysis": {
+          "Transaction ID": {
+            "slope": 0.046825642825642826,
+            "r_squared": 0.0021926408260346756,
+            "p_value": 0.13894890975253968,
+            "trend_direction": "increasing",
+            "significant_trend": false
+          },
+          "Age": {
+            "slope": 0.0003156243156243157,
+            "r_squared": 4.439466417608903e-05,
+            "p_value": 0.8333248831938557,
+            "trend_direction": "increasing",
+            "significant_trend": false
+          },
+          "Quantity": {
+            "slope": -8.634008634008632e-05,
+            "r_squared": 0.0004846426764286278,
+            "p_value": 0.48681945268602644,
+            "trend_direction": "decreasing",
+            "significant_trend": false
+          }
+        }
+      }
+    },
+    "visualizations": {
+      "generated_files": [
+        "analysis_output/visualizations/cleaned_retail_sales_dataset_correlation_heatmap.png",
+        "analysis_output/visualizations/cleaned_retail_sales_dataset_distributions.png",
+        "analysis_output/visualizations/cleaned_retail_sales_dataset_boxplots.png"
+      ],
+      "descriptions": {
+        "correlation_heatmap": "Correlation matrix showing relationships between numeric variables",
+        "distributions": "Distribution plots for numeric variables",
+        "boxplots": "Box plots for outlier detection in numeric variables"
+      }
+    }
+  },
+  "ai_insights": {
+    "insights": "### Key Findings and Insights\n\n1. **Correlations**: \n   - There is a strong positive correlation (0.852) between Price per Unit and Total Amount. This indicates that as the price per unit increases, the total amount spent also increases significantly, which aligns with expectations in retail.\n   - Moderate correlations are observed between Price per Unit and Daily Percent Change (0.512), and between Total Amount and Daily Percent Change (0.596). This suggests that fluctuations in daily sales are tied to both unit pricing and overall spending.\n\n2. **Demographics**: \n   - The average age of customers is 41.39 years, with a standard deviation of 13.68. This demographic insight could guide targeted marketing strategies.\n\n3. **Transaction Patterns**: \n   - The average quantity sold per transaction is approximately 2.51, suggesting that customers typically buy multiple items. The flat distribution characteristics for Transaction ID, Age, and Quantity indicate that the data may not have significant outliers and is relatively uniform, which can simplify analysis.\n\n### Data Quality Assessment and Recommendations\n\n- **Data Quality**: The dataset displays excellent data quality with 0% missing values and 0% duplicate rows. This allows for reliable insights to be derived from the dataset.\n  \n- **Recommendations**:\n  - Continue to monitor data collection procedures to maintain this high level of data quality.\n  - Conduct periodic audits of data inputs to ensure consistency and accuracy, especially if new data sources are introduced.\n\n### Business Implications of the Statistical Findings\n\n1. **Pricing Strategy**: \n   - The strong correlation between price per unit and total amount suggests that strategic pricing adjustments could lead to significant changes in revenue. Businesses may explore price optimization strategies, such as promotions or discounts, for higher-priced items to increase total sales.\n\n2. **Targeted Marketing**:\n   - Given the average customer age, marketing campaigns can be tailored to appeal to this demographic group, possibly focusing on products that resonate with individuals in their 40s.\n\n3. **Sales Forecasting**: \n   - The correlation with daily percent change indicates that monitoring price changes can provide insights into daily sales fluctuations. This could help improve inventory management and sales forecasting.\n\n### Recommendations for Further Analysis or Data Collection\n\n1. **Customer Segmentation**: \n   - Further analysis could include segmenting customers by age, purchase behavior, and geographic location to tailor marketing and product offerings.\n\n2. **Time Series Analysis**: \n   - A deeper dive into time series analysis might uncover seasonal trends or cyclical patterns in purchasing behavior, helping in planning inventory and marketing strategies.\n\n3. **Product Performance Analysis**: \n   - Investigate which specific products drive higher sales and total amounts, and assess if they align with customer demographics.\n\n### Potential Issues or Concerns Identified\n\n- **Distribution Characteristics**: \n   - The platykurtic distribution characteristics across key variables indicate a lack of extreme values, which might suggest missing variability in customer behavior. While this is not a direct data quality issue, it could imply that the dataset may not capture all relevant customer segments or purchasing behaviors.\n\n- **Dependence on Historical Data**: \n   - Relying solely on historical data for trend analysis may not account for shifts in customer preferences or external factors affecting retail sales (such as economic changes or global events). \n\n### Conclusion\n\nOverall, the dataset presents a strong foundation for analysis with no immediate data quality issues. The insights derived suggest actionable strategies in pricing, marketing, and sales forecasting, while also highlighting areas where further exploration and data collection could enhance business decision-making.",
+    "model": "gpt-4o-mini",
+    "usage": {}
+  },
+  "executive_summary": {
+    "dataset_overview": {
+      "total_rows": 1000,
+      "total_columns": 10,
+      "file_size_mb": 0.05562305450439453,
+      "data_types": 3
+    },
+    "key_findings": [
+      "Found 3 strong correlations between variables",
+      "Outliers detected in 1 columns"
+    ],
+    "data_quality_score": 100.0,
+    "recommendations": [
+      "Explore strong correlations for potential feature engineering"
+    ]
+  }
+}

@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report - cleaned_retail_sales_dataset</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .section h3 { color: #555; margin-top: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { color: #666; font-size: 14px; }
+        .quality-score { font-size: 36px; font-weight: bold; }
+        .score-excellent { color: #28a745; }
+        .score-good { color: #17a2b8; }
+        .score-fair { color: #ffc107; }
+        .score-poor { color: #dc3545; }
+        .findings-list { list-style-type: none; padding: 0; }
+        .findings-list li { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #2196f3; }
+        .recommendations-list { list-style-type: none; padding: 0; }
+        .recommendations-list li { background: #fff3e0; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #ff9800; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .data-table th { background-color: #f2f2f2; }
+        .ai-insights { background: #f8f9fa; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .timestamp { color: #666; font-size: 12px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Analysis Report</h1>
+            <h2>cleaned_retail_sales_dataset</h2>
+            <p class="timestamp">Generated on 2025-09-07 22:12:12</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">1,000</div>
+                    <div class="metric-label">Total Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">10</div>
+                    <div class="metric-label">Total Columns</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.1 MB</div>
+                    <div class="metric-label">File Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value quality-score score-excellent">100.0%</div>
+                    <div class="metric-label">Data Quality Score</div>
+                </div>
+            </div>
+
+            
+            <h3>Key Findings</h3>
+            <ul class="findings-list">
+                
+                <li>Found 3 strong correlations between variables</li>
+                
+                <li>Outliers detected in 1 columns</li>
+                
+            </ul>
+            
+
+            
+            <h3>Recommendations</h3>
+            <ul class="recommendations-list">
+                
+                <li>Explore strong correlations for potential feature engineering</li>
+                
+            </ul>
+            
+        </div>
+
+        
+        <div class="section">
+            <h2>AI-Powered Insights</h2>
+            <div class="ai-insights">
+                <pre>### Key Findings and Insights
+
+1. **Correlations**: 
+   - There is a strong positive correlation (0.852) between Price per Unit and Total Amount. This indicates that as the price per unit increases, the total amount spent also increases significantly, which aligns with expectations in retail.
+   - Moderate correlations are observed between Price per Unit and Daily Percent Change (0.512), and between Total Amount and Daily Percent Change (0.596). This suggests that fluctuations in daily sales are tied to both unit pricing and overall spending.
+
+2. **Demographics**: 
+   - The average age of customers is 41.39 years, with a standard deviation of 13.68. This demographic insight could guide targeted marketing strategies.
+
+3. **Transaction Patterns**: 
+   - The average quantity sold per transaction is approximately 2.51, suggesting that customers typically buy multiple items. The flat distribution characteristics for Transaction ID, Age, and Quantity indicate that the data may not have significant outliers and is relatively uniform, which can simplify analysis.
+
+### Data Quality Assessment and Recommendations
+
+- **Data Quality**: The dataset displays excellent data quality with 0% missing values and 0% duplicate rows. This allows for reliable insights to be derived from the dataset.
+  
+- **Recommendations**:
+  - Continue to monitor data collection procedures to maintain this high level of data quality.
+  - Conduct periodic audits of data inputs to ensure consistency and accuracy, especially if new data sources are introduced.
+
+### Business Implications of the Statistical Findings
+
+1. **Pricing Strategy**: 
+   - The strong correlation between price per unit and total amount suggests that strategic pricing adjustments could lead to significant changes in revenue. Businesses may explore price optimization strategies, such as promotions or discounts, for higher-priced items to increase total sales.
+
+2. **Targeted Marketing**:
+   - Given the average customer age, marketing campaigns can be tailored to appeal to this demographic group, possibly focusing on products that resonate with individuals in their 40s.
+
+3. **Sales Forecasting**: 
+   - The correlation with daily percent change indicates that monitoring price changes can provide insights into daily sales fluctuations. This could help improve inventory management and sales forecasting.
+
+### Recommendations for Further Analysis or Data Collection
+
+1. **Customer Segmentation**: 
+   - Further analysis could include segmenting customers by age, purchase behavior, and geographic location to tailor marketing and product offerings.
+
+2. **Time Series Analysis**: 
+   - A deeper dive into time series analysis might uncover seasonal trends or cyclical patterns in purchasing behavior, helping in planning inventory and marketing strategies.
+
+3. **Product Performance Analysis**: 
+   - Investigate which specific products drive higher sales and total amounts, and assess if they align with customer demographics.
+
+### Potential Issues or Concerns Identified
+
+- **Distribution Characteristics**: 
+   - The platykurtic distribution characteristics across key variables indicate a lack of extreme values, which might suggest missing variability in customer behavior. While this is not a direct data quality issue, it could imply that the dataset may not capture all relevant customer segments or purchasing behaviors.
+
+- **Dependence on Historical Data**: 
+   - Relying solely on historical data for trend analysis may not account for shifts in customer preferences or external factors affecting retail sales (such as economic changes or global events). 
+
+### Conclusion
+
+Overall, the dataset presents a strong foundation for analysis with no immediate data quality issues. The insights derived suggest actionable strategies in pricing, marketing, and sales forecasting, while also highlighting areas where further exploration and data collection could enhance business decision-making.</pre>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2>Data Quality Assessment</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">0.0%</div>
+                    <div class="metric-label">Missing Values</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Duplicate Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">999</div>
+                    <div class="metric-label">Complete Rows</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section">
+            <h2>Strong Correlations</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable 1</th>
+                        <th>Variable 2</th>
+                        <th>Pearson Correlation</th>
+                        <th>Strength</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Price per Unit</td>
+                        <td>Total Amount</td>
+                        <td>0.852</td>
+                        <td>Strong</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Price per Unit</td>
+                        <td>Daily Percent Change</td>
+                        <td>0.512</td>
+                        <td>Moderate</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Total Amount</td>
+                        <td>Daily Percent Change</td>
+                        <td>0.596</td>
+                        <td>Moderate</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        <div class="section">
+            <h2>Analysis Metadata</h2>
+            <table class="data-table">
+                <tr><td><strong>Analysis Timestamp</strong></td><td>2025-09-07T22:12:12.788108</td></tr>
+                <tr><td><strong>File Path</strong></td><td>sales_data/cleaned_retail_sales_dataset.csv</td></tr>
+                <tr><td><strong>Report Version</strong></td><td>1.0</td></tr>
+                
+                <tr><td><strong>AI Model Used</strong></td><td>gpt-4o-mini</td></tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>
