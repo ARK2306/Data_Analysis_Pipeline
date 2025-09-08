@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report - Amazon Sale Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .section h3 { color: #555; margin-top: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { color: #666; font-size: 14px; }
+        .quality-score { font-size: 36px; font-weight: bold; }
+        .score-excellent { color: #28a745; }
+        .score-good { color: #17a2b8; }
+        .score-fair { color: #ffc107; }
+        .score-poor { color: #dc3545; }
+        .findings-list { list-style-type: none; padding: 0; }
+        .findings-list li { background: #e3f2fd; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #2196f3; }
+        .recommendations-list { list-style-type: none; padding: 0; }
+        .recommendations-list li { background: #fff3e0; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #ff9800; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .data-table th { background-color: #f2f2f2; }
+        .ai-insights { background: #f8f9fa; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .timestamp { color: #666; font-size: 12px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Analysis Report</h1>
+            <h2>Amazon Sale Report</h2>
+            <p class="timestamp">Generated on 2025-09-07 23:03:02</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">128,975</div>
+                    <div class="metric-label">Total Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">24</div>
+                    <div class="metric-label">Total Columns</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">65.7 MB</div>
+                    <div class="metric-label">File Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value quality-score score-excellent">93.2%</div>
+                    <div class="metric-label">Data Quality Score</div>
+                </div>
+            </div>
+
+            
+            <h3>Key Findings</h3>
+            <ul class="findings-list">
+                
+                <li>High missing values: 6.8% of data is missing</li>
+                
+                <li>Outliers detected in 3 columns</li>
+                
+            </ul>
+            
+
+            
+        </div>
+
+        
+        <div class="section">
+            <h2>AI-Powered Insights</h2>
+            <div class="ai-insights">
+                <pre>### Key Findings and Insights
+
+1. **Sales Overview**:
+   - The average sales amount per transaction is $648.56, suggesting that a significant portion of sales comes from higher-value items.
+   - The average quantity sold per transaction is low (0.90), indicating that most transactions involve single-item sales.
+
+2. **Data Distribution**:
+   - The amount has a right-skewed distribution, indicating that there are a few high-value transactions that could be influencing the average. This can skew the perception of typical sales performance.
+   - The quantity sold is left-skewed, suggesting that most sales involve fewer items but a small number of transactions involve a higher quantity of items.
+
+3. **Outliers**:
+   - A notable number of outliers exist in the quantity sold (10.2%) and to a lesser extent in the amount (3.0%). This could indicate unusual buying behavior or errors in data entry for some transactions.
+
+### Data Quality Assessment and Recommendations
+
+1. **Missing Values**:
+   - With 6.8% missing values, it is important to identify which columns contain these missing values and assess their importance. If critical business metrics like sales amount or quantity are affected, imputation or exclusion strategies should be applied.
+
+2. **Outlier Management**:
+   - Outliers in the quantity sold should be further investigated to determine if they are legitimate data points or errors. Depending on the findings, they may need to be excluded from analysis or treated differently.
+
+3. **Field Validation**:
+   - Implement validation checks during data entry to minimize future missing values and ensure consistency in data collection, especially for critical fields.
+
+### Business Implications of the Statistical Findings
+
+1. **Pricing Strategy**:
+   - The right-skewed distribution of sales amounts suggests that higher-value items might be driving sales. Businesses may consider bundling lower-value items with higher-value items to increase average transaction sizes.
+
+2. **Inventory Management**:
+   - The low average quantity per transaction could imply a need for better stock management or marketing strategies to encourage bulk purchases. Promotions could be designed to incentivize larger purchases.
+
+3. **Customer Segmentation**:
+   - Identifying customers responsible for high-value transactions could help in targeted marketing campaigns. Understanding their demographics and buying behavior could enhance customer loyalty initiatives.
+
+### Recommendations for Further Analysis or Data Collection
+
+1. **Customer Behavior Analysis**:
+   - Collect additional data on customer demographics and transaction history to understand the profiles of high-value customers, which can inform targeted marketing efforts.
+
+2. **Seasonal Trends**:
+   - Analyzing sales data over time could uncover seasonal patterns or trends that can assist in inventory planning and promotional strategies.
+
+3. **Enhanced Data Collection**:
+   - Consider collecting more detailed data on product categories, customer feedback, and return rates to enrich the analysis and provide more insights into sales performance.
+
+### Potential Issues or Concerns Identified
+
+1. **Data Completeness**:
+   - The missing values may affect the reliability of analysis. Identifying specific fields that are missing data is critical for assessing potential impacts on business decisions.
+
+2. **Outlier Impact**:
+   - The presence of outliers, particularly in quantity, could distort metrics like average sales and should be handled carefully to ensure accurate reporting.
+
+3. **Analysis Bias**:
+   - The skewness in distribution may lead to bias in interpretation if not properly accounted for in reporting. Using median values instead of mean for analysis might provide a more accurate representation of typical performance.
+
+By addressing these data quality issues and leveraging insights from the statistical findings, the business can enhance its decision-making processes and drive improved sales performance.</pre>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2>Data Quality Assessment</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">6.8%</div>
+                    <div class="metric-label">Missing Values</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Duplicate Rows</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">19379</div>
+                    <div class="metric-label">Complete Rows</div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="section">
+            <h2>Analysis Metadata</h2>
+            <table class="data-table">
+                <tr><td><strong>Analysis Timestamp</strong></td><td>2025-09-07T23:03:02.263742</td></tr>
+                <tr><td><strong>File Path</strong></td><td>sales_data/Amazon Sale Report.csv</td></tr>
+                <tr><td><strong>Report Version</strong></td><td>1.0</td></tr>
+                
+                <tr><td><strong>AI Model Used</strong></td><td>gpt-4o-mini</td></tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>

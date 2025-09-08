@@ -1,0 +1,28 @@
+
+DATA ANALYSIS SUMMARY REPORT
+============================
+File: Amazon Sale Report
+Generated: 2025-09-07 23:03:02
+
+DATASET OVERVIEW
+----------------
+Rows: 128,975
+Columns: 24
+File Size: 65.7 MB
+Data Quality Score: 93.2%
+
+KEY FINDINGS
+------------
+• High missing values: 6.8% of data is missing
+• Outliers detected in 3 columns
+
+AI INSIGHTS
+-----------
+### Key Findings and Insights
+
+1. **Sales Overview**:
+   - The average sales amount per transaction is $648.56, suggesting that a significant portion of sales comes from higher-value items.
+   - The average quantity sold per transaction is low (0.90), indicating that most transactions involve single-item sales.
+
+2. **Data Distribution**:
+   - The amount has a right-skewed distribution, indicating that there are a few high-value transactions that could be influencing the average. This can skew th...

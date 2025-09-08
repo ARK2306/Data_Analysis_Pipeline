@@ -13,3 +13,31 @@
 2025-09-07 16:03:37,101 - report_generator - ERROR - Report generation failed: No filter named 'number_format'.
 2025-09-07 16:03:37,101 - __main__ - INFO - Analysis pipeline completed for sales_data/retail_sales_dataset.csv
 2025-09-07 16:03:37,101 - __main__ - INFO - One-time analysis completed
+2025-09-07 22:44:57,719 - report_generator - INFO - Generating AI insights via Amplify API
+2025-09-07 22:45:11,558 - report_generator - INFO - AI insights generated successfully
+2025-09-07 22:46:01,484 - analysis_engine - INFO - Starting analysis of: sales_data/Amazon Sale Report.csv
+2025-09-07 22:46:01,806 - analysis_engine - INFO - Loaded 128975 rows and 24 columns from sales_data/Amazon Sale Report.csv
+2025-09-07 22:46:03,953 - analysis_engine - INFO - Analysis completed for: sales_data/Amazon Sale Report.csv
+2025-09-07 23:02:47,385 - main - INFO - Running one-time analysis on: sales_data/Amazon Sale Report.csv
+2025-09-07 23:02:47,386 - main - INFO - Initializing Data Analysis Pipeline...
+2025-09-07 23:02:47,386 - ci_cd_manager - INFO - Connected to Git repository: /Users/aryanreddy/Desktop/swe-assignments/as3_example/aryan_kalluri
+2025-09-07 23:02:47,386 - main - INFO - Pipeline initialization completed successfully
+2025-09-07 23:02:47,386 - main - INFO - Processing data change: sales_data/Amazon Sale Report.csv
+2025-09-07 23:02:47,386 - analysis_engine - INFO - Starting analysis of: sales_data/Amazon Sale Report.csv
+2025-09-07 23:02:47,699 - analysis_engine - INFO - Loaded 128975 rows and 24 columns from sales_data/Amazon Sale Report.csv
+2025-09-07 23:02:49,836 - analysis_engine - INFO - Analysis completed for: sales_data/Amazon Sale Report.csv
+2025-09-07 23:02:49,842 - report_generator - INFO - Generating report for analysis of: sales_data/Amazon Sale Report.csv
+2025-09-07 23:02:49,842 - report_generator - INFO - Generating AI insights via Amplify API
+2025-09-07 23:03:02,262 - report_generator - INFO - AI insights generated successfully
+2025-09-07 23:03:02,269 - report_generator - INFO - Reports generated successfully:
+2025-09-07 23:03:02,269 - report_generator - INFO - - HTML: analysis_output/reports/Amazon Sale Report_report_20250907_230249.html
+2025-09-07 23:03:02,269 - report_generator - INFO - - JSON: analysis_output/reports/Amazon Sale Report_report_20250907_230249.json
+2025-09-07 23:03:02,269 - report_generator - INFO - - Summary: analysis_output/reports/Amazon Sale Report_summary_20250907_230249.txt
+2025-09-07 23:03:02,269 - ci_cd_manager - INFO - Starting CI/CD pipeline for analysis of: sales_data/Amazon Sale Report.csv
+2025-09-07 23:03:02,317 - ci_cd_manager - ERROR - Failed to create branch analysis-pipeline-Amazon Sale Report-20250907_230302: Cmd('git') failed due to: exit code(1)
+  cmdline: git checkout analysis-pipeline-Amazon Sale Report-20250907_230302
+  stderr: 'error: pathspec 'analysis-pipeline-Amazon Sale Report-20250907_230302' did not match any file(s) known to git'
+2025-09-07 23:03:02,317 - ci_cd_manager - ERROR - Failed to create analysis branch: analysis-pipeline-Amazon Sale Report-20250907_230302
+2025-09-07 23:03:02,317 - ci_cd_manager - INFO - Pipeline pipeline_20250907_230302 failed in 0.05s: Failed to create analysis branch
+2025-09-07 23:03:02,317 - main - INFO - Analysis pipeline completed for sales_data/Amazon Sale Report.csv
+2025-09-07 23:03:02,317 - main - INFO - One-time analysis completed
